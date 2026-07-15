@@ -59,30 +59,35 @@ export const buildPillars = [
     detail: "Pull matter, relics, species data, and anomalies into one expanding civilization engine.",
     stat: "48 resource classes",
     callout: "Resource lattice online",
+    image: "/media/build/collect.png",
   },
   {
     title: "Evolve",
     detail: "Push from cells to ecosystems to planet-scale networks that change what each colony can become.",
     stat: "87% biosphere growth",
     callout: "Evolution path unlocked",
+    image: "/media/build/evolve.png",
   },
   {
     title: "Explore",
     detail: "Open new routes, scan strange systems, and turn each discovery into fresh build options.",
     stat: "12 systems charted",
     callout: "New atlas route found",
+    image: "/media/build/explore.png",
   },
   {
     title: "Automate",
     detail: "Link colonies, ships, extractors, and research loops until the civilization keeps moving on its own.",
     stat: "32 active loops",
     callout: "Automation mesh stable",
+    image: "/media/build/automate.png",
   },
   {
     title: "Ascend",
     detail: "Convert everything you have built into the next scale of civilization and start growing again.",
     stat: "Singularity pending",
     callout: "Ascension threshold near",
+    image: "/media/build/ascend.png",
   },
 ];
 
@@ -91,26 +96,31 @@ export const discoveries = [
     title: "Exotic Worlds",
     detail: "Scan rare climates and settlement odds.",
     image: "/media/discoveries/exotic-worlds.png",
+    heroImage: "/media/discoveries/exotic-worlds-wide.png",
   },
   {
     title: "Rare Matter",
     detail: "Track volatile elements and ancient components.",
     image: "/media/discoveries/rare-matter.png",
+    heroImage: "/media/discoveries/rare-matter-wide.png",
   },
   {
     title: "Ancient Tech",
     detail: "Recover dormant machines and ruin signals.",
     image: "/media/discoveries/ancient-tech.png",
+    heroImage: "/media/discoveries/ancient-tech-wide.png",
   },
   {
     title: "Evolving Worlds",
     detail: "Guide ecosystems from cells to biospheres.",
     image: "/media/discoveries/evolving-worlds.png",
+    heroImage: "/media/discoveries/evolving-worlds-wide.png",
   },
   {
     title: "Discover Life",
     detail: "Find species that alter every growth path.",
     image: "/media/discoveries/discover-life.png",
+    heroImage: "/media/discoveries/discover-life-wide.png",
   },
 ];
 

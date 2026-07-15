@@ -378,7 +378,14 @@ function BuildSection({
     <Section id="build" label="Build">
       <div className="build-grid">
         <div className="gameplay-frame">
-          <MediaPlaceholder kind="gameplay-ui" label="Gameplay UI" />
+          <img
+            className="build-art-image"
+            src={activePillar.image}
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+          />
           <div className="ui-callout callout-one">{activePillar.callout}</div>
           <div className="ui-callout callout-two">Trade corridor online</div>
           <div className="ui-callout callout-three">Megastructure phase II</div>
@@ -442,7 +449,14 @@ function DiscoverSection({
           </div>
         </div>
         <div className="discover-media">
-          <MediaPlaceholder kind="planet-screenshot" label="Discovery Atlas" />
+          <img
+            className="discover-hero-image"
+            src={activeDiscovery.heroImage}
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+          />
           <div className="atlas-legend" aria-hidden="true">
             <span>01 Scan</span>
             <span>02 Catalog</span>
@@ -476,14 +490,30 @@ function DiscoverSection({
 function CommunitySection() {
   return (
     <footer className="community-section" id="community">
-      <p className="section-kicker">Community</p>
-      <h2>Keep growing with the first explorers.</h2>
-      <div className="community-links">
-        {communityLinks.map((link) => (
-          <a href="#" key={link}>
-            {link}
-          </a>
-        ))}
+      <div className="community-layout">
+        <div className="community-copy">
+          <p className="section-kicker">Community</p>
+          <h2>Keep growing with the first explorers.</h2>
+          <p>
+            Join the founding signal: share discoveries, compare builds, and help shape the
+            universe as it expands.
+          </p>
+          <div className="community-links">
+            {communityLinks.map((link) => (
+              <a href="#" key={link}>
+                {link}
+              </a>
+            ))}
+          </div>
+        </div>
+        <div className="community-art" aria-hidden="true">
+          <img
+            src="/media/community/helmet-profile.png"
+            alt=""
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
       </div>
       <div className="footer-line">
         <span>NOVERIS</span>

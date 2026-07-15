@@ -3803,3 +3803,90 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* Centered community lockup to match the discovery frame */
+#build .pillar-detail {
+  height: 178px;
+  max-height: 178px;
+}
+
+#build .pillar-detail p {
+  max-height: calc(1.55em * 3);
+}
+
+.community-section {
+  width: min(1680px, calc(100vw - 36px));
+  max-width: none;
+  margin-inline: auto;
+  padding: clamp(64px, 8vw, 118px) 0 46px;
+}
+
+.community-layout {
+  width: 100%;
+  min-height: clamp(460px, 50vh, 600px);
+  grid-template-columns: minmax(540px, 0.46fr) minmax(0, 0.54fr);
+}
+
+.community-copy {
+  justify-content: center;
+  padding: clamp(36px, 4vw, 58px);
+}
+
+.community-copy h2 {
+  max-width: 13.5ch;
+  margin: 14px 0 22px;
+  font-size: clamp(3.25rem, 4.15vw, 5.2rem);
+  line-height: 0.9;
+  text-wrap: balance;
+}
+
+.community-copy > p:not(.section-kicker) {
+  max-width: 38rem;
+}
+
+.community-links {
+  max-width: 500px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 28px;
+}
+
+.community-links a {
+  min-height: 46px;
+  font-size: 0.7rem;
+}
+
+.community-art,
+.community-art img {
+  min-height: clamp(460px, 50vh, 600px);
+}
+
+.community-art::before {
+  background:
+    linear-gradient(90deg, rgba(3, 6, 10, 0.68), transparent 22%, transparent 82%, rgba(3, 6, 10, 0.1)),
+    radial-gradient(circle at 78% 50%, transparent 0 34%, rgba(3, 6, 10, 0.24) 78%);
+}
+
+.community-art img {
+  object-position: center right;
+}
+
+@media (max-width: 1280px) {
+  .community-layout {
+    grid-template-columns: minmax(420px, 0.48fr) minmax(0, 0.52fr);
+  }
+
+  .community-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .community-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .community-art,
+  .community-art img {
+    min-height: 360px;
+  }
+}

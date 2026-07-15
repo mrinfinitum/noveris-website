@@ -516,8 +516,17 @@ function CommunitySection() {
         </div>
       </div>
       <div className="footer-line">
-        <span>NOVERIS</span>
-        <span>The Future We Build</span>
+        <a className="footer-logo" href="#top" aria-label="NOVERIS home">
+          <img src="/media/derived/noveris-wordmark-alpha.png" alt="NOVERIS" />
+        </a>
+        <p>
+          An infinite universe of collecting, exploring, evolving, and growing civilizations.
+        </p>
+        <div className="footer-meta" aria-label="NOVERIS footer links">
+          <a href="#vision">Vision</a>
+          <a href="#build">Build</a>
+          <a href="#discover">Discover</a>
+        </div>
       </div>
     </footer>
   );

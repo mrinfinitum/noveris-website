@@ -62,11 +62,11 @@ export const buildPillars = [
 ];
 
 export const discoveries = [
-  { title: "Exotic Worlds", detail: "Catalog frozen dawns, glass deserts, and living storms." },
-  { title: "Ocean Worlds", detail: "Harvest blue horizons for habitats, science, and trade." },
-  { title: "Gas Giants", detail: "Build cities above impossible atmospheres." },
-  { title: "Ancient Ruins", detail: "Collect relics from civilizations older than memory." },
-  { title: "Alien Life", detail: "Evolve with ecosystems that change the rules." },
+  { title: "Exotic Worlds", detail: "Scan impossible climates, rare biomes, and settlement odds before the first colony lands." },
+  { title: "Rare Matter", detail: "Track crystals, volatile elements, and ancient components that unlock the next build chain." },
+  { title: "Ancient Tech", detail: "Recover dormant machines, ruin signals, and relic systems from civilizations lost to deep time." },
+  { title: "Living Systems", detail: "Collect species traits and ecological mutations that push worlds from cells to biospheres." },
+  { title: "Hidden Routes", detail: "Reveal shortcuts, trade corridors, and dangerous gates that keep the universe expanding." },
 ];
 
 export const researchEras = [

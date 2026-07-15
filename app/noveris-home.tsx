@@ -69,8 +69,8 @@ const mediaAssets: Partial<
     credit: "NOVERIS concept art",
   },
   "planet-screenshot": {
-    src: "/media/retro/noveris-retro-ocean-world.png",
-    alt: "Retro minimal ocean world with research habitats, water reflections, and ancient ruins.",
+    src: "/media/retro/noveris-retro-discovery-atlas.png",
+    alt: "Retro minimal discovery atlas with exotic planets, ancient ruins, rare crystals, alien life, spacecraft routes, and orbital scanner lines.",
     credit: "NOVERIS concept art",
   },
 };
@@ -89,6 +89,7 @@ export function NoverisHome() {
   const planetScale = useTransform(smoothProgress, [0, 0.55], [1, 1.18]);
   const planetX = useTransform(mouseX, [-0.5, 0.5], [-26, 26]);
   const [activePlanet, setActivePlanet] = useState(explorePlanets[1]);
+  const [activeDiscovery, setActiveDiscovery] = useState(discoveries[0]);
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -192,7 +193,7 @@ export function NoverisHome() {
       <CivilizationsSection />
       <ExploreSection activePlanet={activePlanet} setActivePlanet={setActivePlanet} />
       <BuildSection />
-      <DiscoverSection />
+      <DiscoverSection activeDiscovery={activeDiscovery} setActiveDiscovery={setActiveDiscovery} />
       <CommunitySection />
     </main>
   );
@@ -396,22 +397,54 @@ function BuildSection() {
   );
 }
 
-function DiscoverSection() {
+function DiscoverSection({
+  activeDiscovery,
+  setActiveDiscovery,
+}: {
+  activeDiscovery: (typeof discoveries)[number];
+  setActiveDiscovery: (discovery: (typeof discoveries)[number]) => void;
+}) {
   return (
     <Section id="discover" label="Discover">
-      <div className="discover-hero">
-        <MediaPlaceholder kind="planet-screenshot" label="Planet Screenshot" />
-        <div>
-          <h2>An endless map of things to find.</h2>
+      <div className="discover-atlas">
+        <div className="discover-copy">
+          <span className="atlas-eyebrow">Scanner atlas</span>
+          <h2>Rare finds rewrite the build.</h2>
+          <p>
+            Scan systems, collect anomalies, evolve living worlds, and turn each
+            find into the next growth path.
+          </p>
+          <div className="discovery-readout" aria-live="polite">
+            <span>Selected find</span>
+            <strong>{activeDiscovery.title}</strong>
+            <p>{activeDiscovery.detail}</p>
+          </div>
+        </div>
+        <div className="discover-media">
+          <MediaPlaceholder kind="planet-screenshot" label="Discovery Atlas" />
+          <div className="atlas-legend" aria-hidden="true">
+            <span>01 Scan</span>
+            <span>02 Catalog</span>
+            <span>03 Unlock</span>
+          </div>
         </div>
       </div>
-      <div className="discovery-grid">
+      <div className="discovery-grid" role="tablist" aria-label="Discovery categories">
         {discoveries.map((discovery) => (
-          <article key={discovery.title}>
-            <span />
+          <button
+            type="button"
+            className={activeDiscovery.title === discovery.title ? "is-active" : ""}
+            key={discovery.title}
+            role="tab"
+            aria-label={discovery.title}
+            aria-selected={activeDiscovery.title === discovery.title}
+            onClick={() => setActiveDiscovery(discovery)}
+            onMouseEnter={() => setActiveDiscovery(discovery)}
+          >
+            <span aria-hidden="true" />
             <h3>{discovery.title}</h3>
             <p>{discovery.detail}</p>
-          </article>
+          </button>
         ))}
       </div>
     </Section>

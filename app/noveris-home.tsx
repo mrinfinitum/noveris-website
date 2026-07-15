@@ -90,6 +90,7 @@ export function NoverisHome() {
   const planetX = useTransform(mouseX, [-0.5, 0.5], [-26, 26]);
   const [activePlanet, setActivePlanet] = useState(explorePlanets[1]);
   const [activeDiscovery, setActiveDiscovery] = useState(discoveries[0]);
+  const [activeBuildPillar, setActiveBuildPillar] = useState(buildPillars[0]);
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -192,7 +193,7 @@ export function NoverisHome() {
       <VisionSection />
       <CivilizationsSection />
       <ExploreSection activePlanet={activePlanet} setActivePlanet={setActivePlanet} />
-      <BuildSection />
+      <BuildSection activePillar={activeBuildPillar} setActivePillar={setActiveBuildPillar} />
       <DiscoverSection activeDiscovery={activeDiscovery} setActiveDiscovery={setActiveDiscovery} />
       <CommunitySection />
     </main>
@@ -366,22 +367,42 @@ function ExploreSection({
   );
 }
 
-function BuildSection() {
+function BuildSection({
+  activePillar,
+  setActivePillar,
+}: {
+  activePillar: (typeof buildPillars)[number];
+  setActivePillar: (pillar: (typeof buildPillars)[number]) => void;
+}) {
   return (
     <Section id="build" label="Build">
       <div className="build-grid">
         <div className="gameplay-frame">
           <MediaPlaceholder kind="gameplay-ui" label="Gameplay UI" />
-          <div className="ui-callout callout-one">Automation mesh stable</div>
+          <div className="ui-callout callout-one">{activePillar.callout}</div>
           <div className="ui-callout callout-two">Trade corridor online</div>
           <div className="ui-callout callout-three">Megastructure phase II</div>
         </div>
         <div className="build-copy">
           <h2>Collect the universe. Grow without end.</h2>
-          <div className="pillar-list">
+          <div className="pillar-list" role="tablist" aria-label="Build loops">
             {buildPillars.map((pillar) => (
-              <span key={pillar}>{pillar}</span>
+              <button
+                type="button"
+                className={activePillar.title === pillar.title ? "is-active" : ""}
+                key={pillar.title}
+                role="tab"
+                aria-selected={activePillar.title === pillar.title}
+                onClick={() => setActivePillar(pillar)}
+                onMouseEnter={() => setActivePillar(pillar)}
+              >
+                {pillar.title}
+              </button>
             ))}
+          </div>
+          <div className="pillar-detail" aria-live="polite">
+            <span>{activePillar.stat}</span>
+            <p>{activePillar.detail}</p>
           </div>
           <div className="build-stat-grid" aria-label="Build systems">
             <span>Catalogued</span>
@@ -441,6 +462,7 @@ function DiscoverSection({
             onClick={() => setActiveDiscovery(discovery)}
             onMouseEnter={() => setActiveDiscovery(discovery)}
           >
+            <img src={discovery.image} alt="" aria-hidden="true" loading="lazy" decoding="async" />
             <span aria-hidden="true" />
             <h3>{discovery.title}</h3>
             <p>{discovery.detail}</p>

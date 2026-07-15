@@ -54,19 +54,64 @@ export const explorePlanets = [
 ];
 
 export const buildPillars = [
-  "Collect",
-  "Evolve",
-  "Explore",
-  "Automate",
-  "Ascend",
+  {
+    title: "Collect",
+    detail: "Pull matter, relics, species data, and anomalies into one expanding civilization engine.",
+    stat: "48 resource classes",
+    callout: "Resource lattice online",
+  },
+  {
+    title: "Evolve",
+    detail: "Push from cells to ecosystems to planet-scale networks that change what each colony can become.",
+    stat: "87% biosphere growth",
+    callout: "Evolution path unlocked",
+  },
+  {
+    title: "Explore",
+    detail: "Open new routes, scan strange systems, and turn each discovery into fresh build options.",
+    stat: "12 systems charted",
+    callout: "New atlas route found",
+  },
+  {
+    title: "Automate",
+    detail: "Link colonies, ships, extractors, and research loops until the civilization keeps moving on its own.",
+    stat: "32 active loops",
+    callout: "Automation mesh stable",
+  },
+  {
+    title: "Ascend",
+    detail: "Convert everything you have built into the next scale of civilization and start growing again.",
+    stat: "Singularity pending",
+    callout: "Ascension threshold near",
+  },
 ];
 
 export const discoveries = [
-  { title: "Exotic Worlds", detail: "Scan impossible climates, rare biomes, and settlement odds before the first colony lands." },
-  { title: "Rare Matter", detail: "Track crystals, volatile elements, and ancient components that unlock the next build chain." },
-  { title: "Ancient Tech", detail: "Recover dormant machines, ruin signals, and relic systems from civilizations lost to deep time." },
-  { title: "Living Systems", detail: "Collect species traits and ecological mutations that push worlds from cells to biospheres." },
-  { title: "Hidden Routes", detail: "Reveal shortcuts, trade corridors, and dangerous gates that keep the universe expanding." },
+  {
+    title: "Exotic Worlds",
+    detail: "Scan rare climates and settlement odds.",
+    image: "/media/discoveries/exotic-worlds.png",
+  },
+  {
+    title: "Rare Matter",
+    detail: "Track volatile elements and ancient components.",
+    image: "/media/discoveries/rare-matter.png",
+  },
+  {
+    title: "Ancient Tech",
+    detail: "Recover dormant machines and ruin signals.",
+    image: "/media/discoveries/ancient-tech.png",
+  },
+  {
+    title: "Evolving Worlds",
+    detail: "Guide ecosystems from cells to biospheres.",
+    image: "/media/discoveries/evolving-worlds.png",
+  },
+  {
+    title: "Discover Life",
+    detail: "Find species that alter every growth path.",
+    image: "/media/discoveries/discover-life.png",
+  },
 ];
 
 export const researchEras = [

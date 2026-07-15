@@ -3464,9 +3464,9 @@ body {
 /* Stateful art refresh */
 .gameplay-frame {
   isolation: isolate;
-  aspect-ratio: 4 / 5;
-  min-height: 0;
-  height: min(820px, 76vw);
+  align-self: stretch;
+  min-height: 820px;
+  height: auto;
   background: #04070c;
 }
 
@@ -3525,19 +3525,33 @@ body {
   z-index: 7;
 }
 
+.discovery-readout {
+  min-height: 172px;
+  align-content: start;
+}
+
+.discovery-readout strong {
+  min-height: 1.28em;
+}
+
+.discovery-readout p {
+  min-height: 3.1em;
+}
+
 .community-section {
+  width: min(100vw - 48px, 1900px);
   padding-top: 72px;
 }
 
 .community-layout {
   display: grid;
-  min-height: 680px;
+  min-height: clamp(680px, 78vh, 900px);
   overflow: hidden;
   border: 1px solid rgba(241, 246, 240, 0.13);
   background:
     linear-gradient(90deg, rgba(241, 246, 240, 0.045) 0 1px, transparent 1px 50%),
     #03060a;
-  grid-template-columns: minmax(380px, 0.45fr) minmax(0, 1fr);
+  grid-template-columns: minmax(390px, 0.34fr) minmax(0, 1fr);
 }
 
 .community-copy {
@@ -3546,7 +3560,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 56px;
+  padding: clamp(48px, 5vw, 88px);
 }
 
 .community-copy h2 {
@@ -3566,7 +3580,7 @@ body {
 
 .community-art {
   position: relative;
-  min-height: 680px;
+  min-height: clamp(680px, 78vh, 900px);
   overflow: hidden;
   background:
     radial-gradient(circle at 82% 34%, rgba(240, 164, 91, 0.18), transparent 17rem),
@@ -3587,7 +3601,7 @@ body {
 .community-art img {
   width: 100%;
   height: 100%;
-  min-height: 680px;
+  min-height: clamp(680px, 78vh, 900px);
   object-fit: cover;
   object-position: center right;
   opacity: 0.94;
@@ -3606,7 +3620,7 @@ body {
 
 @media (max-width: 1180px) {
   .gameplay-frame {
-    height: 720px;
+    min-height: 720px;
   }
 
   .community-layout {
@@ -3631,7 +3645,7 @@ body {
 
 @media (max-width: 700px) {
   .gameplay-frame {
-    height: 560px;
+    min-height: 560px;
   }
 
   .community-copy {

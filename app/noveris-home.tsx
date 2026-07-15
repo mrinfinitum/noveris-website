@@ -164,7 +164,7 @@ export function NoverisHome() {
             variants={fadeUp}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
-          A civilization game about the future we build
+            Infinite universe. Collect, explore, evolve, and keep growing.
           </motion.p>
           <motion.div
             className="hero-actions"
@@ -202,7 +202,7 @@ function Header() {
   return (
     <header className="site-header">
       <a className="brand-mark" href="#top" aria-label="NOVERIS home">
-        <img src="/media/derived/noveris-wordmark.png" alt="NOVERIS - The Future We Build" />
+        <img src="/media/derived/noveris-wordmark-alpha.png" alt="NOVERIS" />
       </a>
       <nav aria-label="Primary navigation">
         {navItems.map((item) => (
@@ -339,10 +339,10 @@ function ExploreSection({
           <div className="readout-grid" aria-hidden="true">
             <span>Signal</span>
             <strong>92%</strong>
-            <span>Biomes</span>
+            <span>Finds</span>
             <strong>07</strong>
-            <span>Route</span>
-            <strong>Locked</strong>
+            <span>Growth</span>
+            <strong>Rising</strong>
           </div>
         </motion.aside>
       </div>
@@ -361,18 +361,18 @@ function BuildSection() {
           <div className="ui-callout callout-three">Megastructure phase II</div>
         </div>
         <div className="build-copy">
-          <h2>Turn discovery into civilization.</h2>
+          <h2>Collect the universe. Grow without end.</h2>
           <div className="pillar-list">
             {buildPillars.map((pillar) => (
               <span key={pillar}>{pillar}</span>
             ))}
           </div>
           <div className="build-stat-grid" aria-label="Build systems">
-            <span>Colonies</span>
+            <span>Catalogued</span>
             <strong>12</strong>
-            <span>Trade routes</span>
+            <span>Resources</span>
             <strong>48</strong>
-            <span>Automation</span>
+            <span>Evolution</span>
             <strong>87%</strong>
           </div>
         </div>
@@ -387,7 +387,7 @@ function DiscoverSection() {
       <div className="discover-hero">
         <MediaPlaceholder kind="planet-screenshot" label="Planet Screenshot" />
         <div>
-          <h2>Worlds that feel found, not placed.</h2>
+          <h2>An endless map of things to find.</h2>
         </div>
       </div>
       <div className="discovery-grid">
@@ -407,7 +407,7 @@ function CommunitySection() {
   return (
     <footer className="community-section" id="community">
       <p className="section-kicker">Community</p>
-      <h2>The future is already assembling.</h2>
+      <h2>Keep growing with the first explorers.</h2>
       <div className="community-links">
         {communityLinks.map((link) => (
           <a href="#" key={link}>

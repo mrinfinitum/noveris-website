@@ -2,46 +2,46 @@ export const navItems = ["Vision", "Civilizations", "Explore", "Build", "Discove
 
 export const heroActions = [
   { label: "Wishlist", href: "#community", intent: "primary" },
-  { label: "Play Free", href: "#build", intent: "ghost" },
+  { label: "Start Growing", href: "#build", intent: "ghost" },
   { label: "Join Community", href: "#community", intent: "ghost" },
 ];
 
 export const visionLines = [
-  "Humanity stands at the edge of its next great chapter.",
-  "Build civilizations.",
-  "Explore galaxies.",
-  "Shape the future.",
+  "From first spark to infinite universe.",
+  "Collect resources.",
+  "Explore living galaxies.",
+  "Keep growing.",
 ];
 
 export const civilizations = [
   {
     name: "Industrial",
-    theme: "Forge orbital economies from raw asteroid belts.",
-    description: "Automation networks, refinery chains, and megastructure logistics.",
+    theme: "Collect from asteroid belts, moons, and orbital wreckage.",
+    description: "Turn raw matter into automated economies and megastructure chains.",
     accent: "amber",
   },
   {
     name: "Scientific",
-    theme: "Turn unknown systems into living maps.",
-    description: "Observatories, expedition fleets, and breakthrough research eras.",
+    theme: "Scan unknown systems until the map becomes alive.",
+    description: "Discover species, anomalies, and breakthroughs that unlock the next scale.",
     accent: "cyan",
   },
   {
     name: "Ecological",
-    theme: "Grow worlds that thrive beyond Earth.",
-    description: "Closed-loop habitats, ocean restoration, and adaptive biospheres.",
+    theme: "Grow from cells to biospheres to planetary networks.",
+    description: "Seed life, balance worlds, and evolve habitats that survive the void.",
     accent: "green",
   },
   {
     name: "Cybernetic",
-    theme: "Synchronize people, machines, and cities.",
-    description: "Neural infrastructure, autonomous stations, and predictive governance.",
+    theme: "Upgrade the systems that keep expansion moving.",
+    description: "Neural infrastructure, autonomous stations, and cities that learn.",
     accent: "violet",
   },
   {
     name: "Corporate",
-    theme: "Build the trade routes everyone depends on.",
-    description: "Freight corridors, contract hubs, and interstellar market leverage.",
+    theme: "Route the rarest finds across an endless economy.",
+    description: "Trade relics, resources, and discoveries across growing civilizations.",
     accent: "gold",
   },
 ];
@@ -54,19 +54,19 @@ export const explorePlanets = [
 ];
 
 export const buildPillars = [
-  "Research",
-  "Automation",
-  "Colonization",
-  "Trade",
-  "Megastructures",
+  "Collect",
+  "Evolve",
+  "Explore",
+  "Automate",
+  "Ascend",
 ];
 
 export const discoveries = [
-  { title: "Exotic Worlds", detail: "Frozen dawns, glass deserts, and living storms." },
-  { title: "Ocean Worlds", detail: "Blue horizons built for habitats, science, and trade." },
-  { title: "Gas Giants", detail: "Cities suspended above impossible atmospheres." },
-  { title: "Ancient Ruins", detail: "Silent architectures older than every human era." },
-  { title: "Alien Life", detail: "Ecosystems that ask more questions than they answer." },
+  { title: "Exotic Worlds", detail: "Catalog frozen dawns, glass deserts, and living storms." },
+  { title: "Ocean Worlds", detail: "Harvest blue horizons for habitats, science, and trade." },
+  { title: "Gas Giants", detail: "Build cities above impossible atmospheres." },
+  { title: "Ancient Ruins", detail: "Collect relics from civilizations older than memory." },
+  { title: "Alien Life", detail: "Evolve with ecosystems that change the rules." },
 ];
 
 export const researchEras = [
@@ -86,7 +86,7 @@ export const structuredData = {
   name: "NOVERIS",
   alternateName: "Noveris",
   description:
-    "NOVERIS is a hopeful AAA-scale game about civilization, exploration, automation, and humanity's future in space.",
+    "NOVERIS is a hopeful AAA-scale game about collecting, exploring, evolving, and growing civilizations across an infinite universe.",
   genre: ["Exploration", "Strategy", "Simulation", "Science fiction"],
   applicationCategory: "Game",
   operatingSystem: "Windows, macOS",

@@ -2724,3 +2724,33 @@ body {
     min-height: 250px;
   }
 }
+
+/* Clean transparent logo treatment */
+.brand-mark {
+  width: clamp(270px, 26vw, 460px);
+  min-height: 86px;
+  padding: 18px 0;
+  opacity: 1;
+  filter: none;
+  mix-blend-mode: normal;
+}
+
+.brand-mark img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: transparent;
+  filter: none;
+}
+
+.site-header {
+  background: #010204;
+}
+
+@media (max-width: 700px) {
+  .brand-mark {
+    width: min(72vw, 300px);
+    min-height: 70px;
+    padding-block: 16px;
+  }
+}

@@ -10,12 +10,14 @@ export const metadata: Metadata = {
     template: "%s | NOVERIS",
   },
   description:
-    "A premium civilization, exploration, automation, and discovery game about humanity's hopeful future in space.",
+    "A premium space civilization game about collecting, exploring, evolving, and growing across an infinite universe.",
   keywords: [
     "NOVERIS",
     "space game",
     "civilization game",
     "exploration game",
+    "infinite universe game",
+    "collecting game",
     "automation game",
     "science fiction strategy",
   ],
@@ -24,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "NOVERIS | The Future We Build",
     description:
-      "Build civilizations, explore galaxies, automate worlds, and discover humanity's next chapter.",
+      "Collect resources, explore living galaxies, evolve civilizations, and keep growing across an infinite universe.",
     url: siteUrl,
     siteName: "NOVERIS",
     type: "website",
@@ -41,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "NOVERIS | The Future We Build",
     description:
-      "A premium civilization, exploration, automation, and discovery game about humanity's future.",
+      "Collect, explore, evolve, and keep growing across an infinite universe.",
     images: ["/og.png"],
   },
   icons: {

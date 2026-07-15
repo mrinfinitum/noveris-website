@@ -3661,3 +3661,145 @@ body {
     min-height: 340px;
   }
 }
+
+/* Full-width, stable late-section layouts */
+#build {
+  width: min(100vw - 48px, 1880px);
+}
+
+#build .build-grid {
+  grid-template-columns: minmax(0, 1.08fr) minmax(430px, 0.62fr);
+  gap: 0;
+  align-items: stretch;
+  border: 1px solid rgba(241, 246, 240, 0.13);
+  background: rgba(241, 246, 240, 0.12);
+}
+
+#build .gameplay-frame {
+  width: 100%;
+  min-height: clamp(660px, 68vh, 820px);
+  border: 0;
+}
+
+#build .build-copy {
+  display: grid;
+  min-height: clamp(660px, 68vh, 820px);
+  grid-template-rows: auto auto 178px minmax(120px, 1fr);
+  align-content: stretch;
+  border-left: 1px solid rgba(241, 246, 240, 0.13);
+  background:
+    linear-gradient(90deg, rgba(241, 246, 240, 0.045) 0 1px, transparent 1px 50%),
+    #06070a;
+  padding: clamp(28px, 4vw, 58px);
+}
+
+#build .build-copy h2 {
+  max-width: 9.5ch;
+  margin: 0;
+  font-size: clamp(3.7rem, 5.3vw, 6.6rem);
+}
+
+#build .pillar-list {
+  margin-top: clamp(24px, 3vw, 38px);
+}
+
+#build .pillar-detail {
+  height: 178px;
+  min-height: 0;
+  overflow: hidden;
+}
+
+#build .pillar-detail p {
+  display: -webkit-box;
+  min-height: calc(1.55em * 3);
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+#build .build-stat-grid {
+  align-self: end;
+  min-height: 120px;
+}
+
+.community-section {
+  width: 100%;
+  max-width: none;
+  padding: clamp(64px, 7vw, 112px) 24px 46px;
+}
+
+.community-layout {
+  width: min(100%, 2060px);
+  min-height: clamp(520px, 60vh, 700px);
+  margin-inline: auto;
+  grid-template-columns: minmax(420px, 0.32fr) minmax(0, 1fr);
+}
+
+.community-copy {
+  padding: clamp(38px, 4vw, 68px);
+}
+
+.community-copy h2 {
+  max-width: 9.25ch;
+  font-size: clamp(3.6rem, 4.6vw, 5.7rem);
+}
+
+.community-copy > p:not(.section-kicker) {
+  max-width: 28rem;
+}
+
+.community-links {
+  display: grid;
+  max-width: 360px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 32px;
+}
+
+.community-links a {
+  min-height: 48px;
+  padding: 0 16px;
+}
+
+.community-art,
+.community-art img {
+  min-height: clamp(520px, 60vh, 700px);
+}
+
+.community-art img {
+  object-position: center right;
+}
+
+@media (max-width: 1180px) {
+  #build .build-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #build .build-copy {
+    border-left: 0;
+    border-top: 1px solid rgba(241, 246, 240, 0.13);
+  }
+}
+
+@media (max-width: 760px) {
+  #build {
+    width: min(100vw - 28px, 1880px);
+  }
+
+  #build .build-copy {
+    grid-template-rows: auto auto 190px minmax(120px, 1fr);
+    padding: 26px;
+  }
+
+  .community-section {
+    padding-inline: 14px;
+  }
+
+  .community-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .community-links {
+    grid-template-columns: 1fr;
+  }
+}

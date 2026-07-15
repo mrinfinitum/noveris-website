@@ -20,6 +20,7 @@ import {
 } from "./noveris-content";
 
 type MediaKind =
+  | "hero-art"
   | "hero-planet"
   | "hero-ship"
   | "galaxy-background"
@@ -40,45 +41,50 @@ const mediaAssets: Partial<
     }
   >
 > = {
+  "hero-art": {
+    src: "/media/retro/noveris-retro-colony-hero.png",
+    alt: "Retro minimal NOVERIS colony at twilight with orbit trails, spacecraft, and a ringed planet.",
+    credit: "NOVERIS concept art",
+  },
   "galaxy-background": {
-    src: "/media/nasa-carina-cosmic-cliffs.jpg",
-    alt: "NASA Webb image of the Cosmic Cliffs in the Carina Nebula.",
-    credit: "NASA / ESA / CSA / STScI",
+    src: "/media/retro/noveris-retro-orbit-map.png",
+    alt: "Retro minimal orbital map over a planetside horizon with multiple worlds and spacecraft.",
+    credit: "NOVERIS concept art",
   },
   "hero-planet": {
-    src: "/media/noveris-ocean-world.png",
-    alt: "NOVERIS ocean world with rings, aurora, distant ship, and coastal cities.",
+    src: "/media/retro/noveris-retro-ocean-world.png",
+    alt: "Retro minimal ocean world with research habitats, ancient ruins, and ringed moons.",
     credit: "NOVERIS game art",
   },
   "concept-art": {
-    src: "/media/noveris-civilization-vista.png",
-    alt: "NOVERIS civilization vista with orbital elevators, glass habitats, and coastal megastructures.",
-    credit: "NOVERIS game art",
+    src: "/media/retro/noveris-retro-colony-hero.png",
+    alt: "Retro minimal planet-side colony scene with habitats, orbit trails, and passing ships.",
+    credit: "NOVERIS concept art",
   },
   "civilization-artwork": {
-    src: "/media/noveris-civilization-vista.png",
-    alt: "NOVERIS interstellar colony key art.",
-    credit: "NOVERIS game art",
+    src: "/media/retro/noveris-retro-build-network.png",
+    alt: "Retro minimal NOVERIS colony network with habitats, trade routes, and orbital infrastructure.",
+    credit: "NOVERIS concept art",
   },
   "gameplay-ui": {
-    src: "/media/noveris-gameplay-ui.png",
-    alt: "NOVERIS gameplay interface showing colonies, research, trade routes, and orbital assets.",
-    credit: "NOVERIS game capture",
+    src: "/media/retro/noveris-retro-build-network.png",
+    alt: "Retro minimal build network showing colony automation, trade routes, ships, and orbital infrastructure.",
+    credit: "NOVERIS concept art",
   },
   "research-screenshot": {
-    src: "/media/noveris-gameplay-ui.png",
-    alt: "NOVERIS strategy interface with research and resource flow panels.",
-    credit: "NOVERIS game capture",
+    src: "/media/retro/noveris-retro-research-launch.png",
+    alt: "Retro minimal research launch gantry with spacecraft, orbital arcs, and distant planet rings.",
+    credit: "NOVERIS concept art",
   },
   "planet-screenshot": {
-    src: "/media/noveris-ocean-world.png",
-    alt: "NOVERIS exotic ocean world with luminous settlements and ancient submerged ruins.",
-    credit: "NOVERIS game art",
+    src: "/media/retro/noveris-retro-ocean-world.png",
+    alt: "Retro minimal ocean world with research habitats, water reflections, and ancient ruins.",
+    credit: "NOVERIS concept art",
   },
   "video-trailer": {
-    src: "/media/nasa-pillars-creation.jpg",
-    alt: "NASA Hubble near-infrared image of the Pillars of Creation.",
-    credit: "NASA / ESA / Hubble Heritage Team",
+    src: "/media/retro/noveris-retro-research-launch.png",
+    alt: "Retro minimal launch and research facility beneath orbit lines and a ringed planet.",
+    credit: "NOVERIS concept art",
   },
 };
 
@@ -156,7 +162,11 @@ export function NoverisHome() {
       <section className="hero-section min-h-screen overflow-hidden" id="top" aria-label="NOVERIS hero">
         <GalaxyBackground mouseX={mouseX} mouseY={mouseY} />
         <motion.div className="hero-brand-scene" style={{ y: heroDrift, scale: planetScale, x: planetX }}>
-          <img src="/media/noveris-tag.png" alt="" aria-hidden="true" />
+          <img
+            src="/media/retro/noveris-retro-colony-hero.png"
+            alt=""
+            aria-hidden="true"
+          />
         </motion.div>
         <div className="hero-copy">
           <h1 className="sr-only">NOVERIS - The Future We Build</h1>
@@ -167,7 +177,7 @@ export function NoverisHome() {
             variants={fadeUp}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
-            Humanity&apos;s future begins beyond the horizon
+          A civilization game about the future we build
           </motion.p>
           <motion.div
             className="hero-actions"
@@ -303,6 +313,20 @@ function ExploreSection({
       <div className="explore-layout">
         <div className="galaxy-stage">
           <MediaPlaceholder kind="galaxy-background" label="Galaxy Background" />
+          <div className="galaxy-map-grid" aria-hidden="true" />
+          <div className="galaxy-core" aria-hidden="true" />
+          <div className="scan-ring scan-ring-one" aria-hidden="true" />
+          <div className="scan-ring scan-ring-two" aria-hidden="true" />
+          <div className="map-route route-veyr-halcyon" aria-hidden="true" />
+          <div className="map-route route-halcyon-eos" aria-hidden="true" />
+          <div className="map-route route-halcyon-nadir" aria-hidden="true" />
+          <div className="map-route route-veyr-nadir" aria-hidden="true" />
+          <div className="sector-label sector-label-one" aria-hidden="true">
+            Euclid drift
+          </div>
+          <div className="sector-label sector-label-two" aria-hidden="true">
+            Atlas route
+          </div>
           {explorePlanets.map((planet) => (
             <button
               className={`planet-pin ${activePlanet.name === planet.name ? "is-active" : ""}`}
@@ -327,6 +351,14 @@ function ExploreSection({
           <h3>{activePlanet.name}</h3>
           <p>{activePlanet.className}</p>
           <small>{activePlanet.orbit}</small>
+          <div className="readout-grid" aria-hidden="true">
+            <span>Signal</span>
+            <strong>92%</strong>
+            <span>Biomes</span>
+            <strong>07</strong>
+            <span>Route</span>
+            <strong>Locked</strong>
+          </div>
         </motion.aside>
       </div>
     </Section>
@@ -474,7 +506,7 @@ function MediaPlaceholder({ kind, label }: { kind: MediaKind; label: string }) {
           src={asset.src}
           alt={asset.alt}
           className="media-image"
-          loading={kind === "galaxy-background" || kind === "hero-planet" ? "eager" : "lazy"}
+          loading={kind === "hero-art" || kind === "galaxy-background" || kind === "hero-planet" ? "eager" : "lazy"}
           decoding="async"
         />
       ) : null}

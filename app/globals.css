@@ -1811,3 +1811,747 @@ body {
     transition-duration: 0.001ms !important;
   }
 }
+
+/* Retro-minimal art direction overrides */
+:root {
+  --void: #03070d;
+  --ink: #07111c;
+  --navy: #0b1c2f;
+  --cyan: #8fcde4;
+  --ice: #f1f6f0;
+  --gold: #f0a45b;
+  --mist: rgba(239, 246, 242, 0.68);
+  --glass: rgba(6, 12, 20, 0.68);
+  --stroke: rgba(233, 241, 237, 0.14);
+}
+
+body {
+  background:
+    radial-gradient(circle at 50% -20%, rgba(48, 92, 130, 0.26), transparent 38rem),
+    linear-gradient(180deg, #020407, #07121e 42%, #03070d);
+}
+
+.site-header {
+  padding-block: 20px;
+  background:
+    linear-gradient(180deg, rgba(0, 2, 6, 0.96), rgba(0, 2, 6, 0.7) 64%, transparent),
+    linear-gradient(90deg, rgba(0, 2, 6, 0.74), transparent 58%);
+  backdrop-filter: blur(10px);
+}
+
+.brand-mark {
+  width: clamp(190px, 19vw, 310px);
+  opacity: 0.94;
+}
+
+.site-header nav {
+  border-radius: 0;
+  background: rgba(2, 5, 9, 0.34);
+}
+
+.site-header nav a {
+  color: rgba(241, 246, 240, 0.72);
+}
+
+.hero-section {
+  background: #03070d;
+}
+
+.hero-section::before {
+  z-index: 3;
+  background:
+    linear-gradient(180deg, rgba(0, 2, 6, 0.42), rgba(0, 2, 6, 0.06) 35%, rgba(0, 2, 6, 0.16) 66%, rgba(0, 2, 6, 0.68)),
+    radial-gradient(circle at 50% 68%, rgba(240, 164, 91, 0.14), transparent 18rem);
+}
+
+.hero-brand-scene {
+  inset: -2vh -2vw;
+  z-index: 1;
+  opacity: 1;
+  filter: saturate(0.98) contrast(1.05);
+  mask-image: linear-gradient(180deg, black 0%, black 82%, transparent 100%);
+}
+
+.hero-brand-scene img {
+  object-position: center bottom;
+  transform: scale(1.035);
+}
+
+.hero-copy {
+  align-content: end;
+  justify-items: start;
+  padding: 0 clamp(24px, 5vw, 86px) clamp(56px, 8vh, 110px);
+  text-align: left;
+}
+
+.hero-copy .section-kicker {
+  max-width: 28ch;
+  color: rgba(241, 246, 240, 0.86);
+  font-size: clamp(0.8rem, 1.1vw, 1rem);
+  letter-spacing: 0.18em;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.72);
+}
+
+.hero-actions {
+  justify-content: flex-start;
+}
+
+.cta-primary,
+.cta-secondary {
+  border-radius: 0;
+}
+
+.cta-primary {
+  background: var(--gold);
+  color: #08090a;
+  box-shadow: 0 18px 60px rgba(240, 164, 91, 0.24);
+}
+
+.cta-secondary {
+  border-color: rgba(241, 246, 240, 0.22);
+  background: rgba(3, 7, 13, 0.44);
+}
+
+.media-placeholder.has-image {
+  border-color: rgba(241, 246, 240, 0.13);
+  background: #05090f;
+}
+
+.media-placeholder.has-image::before {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background:
+    linear-gradient(180deg, rgba(3, 7, 13, 0.02), rgba(3, 7, 13, 0.18)),
+    radial-gradient(circle at 50% 25%, transparent, rgba(3, 7, 13, 0.18) 68%);
+  content: "";
+  pointer-events: none;
+}
+
+.media-placeholder.has-image::after {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.014) 1px, transparent 1px);
+  background-size: 4px 4px, 6px 6px;
+  content: "";
+  mix-blend-mode: overlay;
+  opacity: 0.42;
+  pointer-events: none;
+}
+
+.media-image {
+  filter: saturate(0.92) contrast(1.04);
+  transform: scale(1.004);
+}
+
+.media-label {
+  right: 20px;
+  bottom: 18px;
+  z-index: 6;
+  color: rgba(241, 246, 240, 0.46);
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+}
+
+.galaxy-background.media-placeholder.has-image,
+.galaxy-stage .media-placeholder.galaxy-background.has-image {
+  background: #05090f;
+}
+
+.galaxy-stage {
+  min-height: 700px;
+  background: #05090f;
+}
+
+.galaxy-stage .media-image {
+  object-position: center center;
+}
+
+.vision-grid {
+  grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.72fr);
+}
+
+.vision-image,
+.concept-art {
+  min-height: 520px;
+}
+
+.concept-art .media-image {
+  object-position: center center;
+}
+
+.civilization-card {
+  min-height: 500px;
+  background: #060b12;
+}
+
+.civilization-card > div:last-child {
+  background: linear-gradient(180deg, transparent, rgba(3, 7, 13, 0.86) 26%, rgba(3, 7, 13, 0.98));
+}
+
+.civilization-card h3,
+.planet-readout h3,
+.section-heading h2,
+.vision-copy h2,
+.build-copy h2,
+.discover-hero h2,
+.research-header h2,
+.community-section h2 {
+  color: rgba(241, 246, 240, 0.97);
+}
+
+.accent-amber .civilization-artwork .media-image {
+  object-position: 16% 56%;
+}
+
+.accent-cyan .civilization-artwork .media-image {
+  object-position: 46% 46%;
+}
+
+.accent-green .civilization-artwork .media-image {
+  object-position: 58% 58%;
+}
+
+.accent-violet .civilization-artwork .media-image {
+  object-position: 80% 44%;
+}
+
+.accent-gold .civilization-artwork .media-image {
+  object-position: 38% 64%;
+}
+
+.gameplay-frame {
+  min-height: 720px;
+}
+
+.gameplay-ui .media-image {
+  object-position: center center;
+}
+
+.ui-callout {
+  border-color: rgba(241, 246, 240, 0.18);
+  background: rgba(3, 7, 13, 0.58);
+  color: rgba(241, 246, 240, 0.82);
+}
+
+.build-copy {
+  min-height: 720px;
+}
+
+.research-screenshot {
+  min-height: 320px;
+}
+
+.research-screenshot .media-image {
+  object-position: 28% 48%;
+}
+
+.discover-hero {
+  grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.62fr);
+}
+
+.planet-screenshot {
+  min-height: 640px;
+}
+
+.planet-screenshot .media-image {
+  object-position: center bottom;
+}
+
+.video-trailer .media-image {
+  object-position: 38% center;
+}
+
+.planet-readout,
+.discovery-grid article,
+.timeline li {
+  background: rgba(4, 9, 15, 0.92);
+}
+
+.pillar-list span {
+  border-radius: 0;
+  background: rgba(3, 7, 13, 0.54);
+}
+
+@media (max-width: 700px) {
+  .hero-copy {
+    padding: 0 20px 52px;
+  }
+
+  .hero-copy .section-kicker {
+    max-width: 24ch;
+  }
+
+  .vision-image,
+  .concept-art,
+  .galaxy-stage,
+  .gameplay-frame,
+  .build-copy,
+  .planet-screenshot {
+    min-height: 390px;
+  }
+}
+
+/* Condensed campaign layout and embedded galaxy map */
+.content-section {
+  width: min(1680px, calc(100vw - 36px));
+  padding: clamp(64px, 8vw, 118px) 0;
+}
+
+.section-heading h2,
+.vision-copy h2,
+.build-copy h2,
+.discover-hero h2,
+.research-header h2,
+.community-section h2 {
+  max-width: 12ch;
+  font-size: clamp(2.7rem, 5.2vw, 6.4rem);
+  line-height: 0.91;
+  text-wrap: balance;
+}
+
+.vision-grid {
+  grid-template-columns: minmax(0, 0.56fr) minmax(360px, 0.44fr);
+  gap: 0;
+  align-items: stretch;
+  border: 1px solid rgba(241, 246, 240, 0.11);
+  background: rgba(2, 5, 9, 0.74);
+}
+
+#vision {
+  width: min(1420px, calc(100vw - 36px));
+}
+
+#vision > .section-kicker {
+  margin-left: 0;
+}
+
+#vision .vision-grid {
+  grid-column: 1 / -1;
+}
+
+#vision .vision-grid {
+  position: relative;
+  display: block;
+  min-height: 520px;
+}
+
+#vision .vision-image,
+#vision .concept-art {
+  min-height: 520px;
+  aspect-ratio: auto;
+}
+
+#vision .vision-copy {
+  position: absolute;
+  z-index: 8;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  width: min(520px, 44%);
+  align-content: center;
+  border-left: 1px solid rgba(241, 246, 240, 0.12);
+  background:
+    linear-gradient(90deg, rgba(3, 7, 13, 0.18), rgba(3, 7, 13, 0.9) 34%, rgba(3, 7, 13, 0.96)),
+    radial-gradient(circle at 80% 26%, rgba(240, 164, 91, 0.11), transparent 12rem);
+  padding: clamp(28px, 4vw, 68px);
+}
+
+.vision-image,
+.concept-art {
+  min-height: 420px;
+}
+
+.vision-image {
+  aspect-ratio: 16 / 9;
+}
+
+.vision-copy {
+  display: grid;
+  align-content: center;
+  border-left: 1px solid rgba(241, 246, 240, 0.11);
+  padding: clamp(28px, 4vw, 72px);
+}
+
+.vision-copy h2 {
+  max-width: 10ch;
+  font-size: clamp(2.9rem, 4.7vw, 5.7rem);
+}
+
+.vision-copy p {
+  margin-top: 18px;
+  color: rgba(241, 246, 240, 0.54);
+  font-size: clamp(1.15rem, 1.8vw, 1.85rem);
+}
+
+.civilization-track {
+  grid-auto-columns: minmax(280px, 360px);
+  margin-top: 32px;
+}
+
+.civilization-card {
+  min-height: 430px;
+}
+
+.explore-layout {
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 390px);
+  gap: 0;
+  border: 1px solid rgba(241, 246, 240, 0.13);
+  background: #03070d;
+}
+
+.galaxy-stage {
+  min-height: 610px;
+  border: 0;
+  background:
+    radial-gradient(circle at 42% 50%, rgba(255, 163, 38, 0.16), transparent 5rem),
+    radial-gradient(circle at 56% 44%, rgba(73, 176, 218, 0.16), transparent 11rem),
+    radial-gradient(ellipse at 52% 52%, rgba(245, 170, 75, 0.2), rgba(88, 149, 196, 0.13) 17%, rgba(4, 9, 16, 0) 46%),
+    radial-gradient(circle at 50% 50%, #0e1724 0 1px, transparent 1.3px),
+    linear-gradient(180deg, #02050a, #03070d);
+  background-size: auto, auto, auto, 26px 26px, auto;
+}
+
+.galaxy-stage .media-placeholder.galaxy-background {
+  opacity: 0.24;
+  mix-blend-mode: screen;
+  filter: saturate(0.72) contrast(1.18);
+}
+
+.galaxy-stage .media-placeholder.galaxy-background::before {
+  background:
+    radial-gradient(circle at 50% 50%, transparent 0 22%, rgba(3, 7, 13, 0.46) 55%, rgba(3, 7, 13, 0.86) 100%),
+    linear-gradient(90deg, rgba(3, 7, 13, 0.72), transparent 32%, transparent 68%, rgba(3, 7, 13, 0.72));
+}
+
+.galaxy-stage .media-label {
+  display: none;
+}
+
+.galaxy-map-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(rgba(241, 246, 240, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(241, 246, 240, 0.045) 1px, transparent 1px),
+    radial-gradient(circle at 52% 52%, transparent 0 10%, rgba(241, 246, 240, 0.08) 10.15% 10.28%, transparent 10.42% 18%, rgba(241, 246, 240, 0.055) 18.15% 18.28%, transparent 18.42% 29%, rgba(241, 246, 240, 0.04) 29.15% 29.28%, transparent 29.42%);
+  background-size: 96px 96px, 96px 96px, auto;
+  opacity: 0.72;
+}
+
+.galaxy-core {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  width: min(44vw, 620px);
+  aspect-ratio: 1;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle, rgba(255, 181, 70, 0.78) 0 1.8%, rgba(255, 181, 70, 0.24) 2% 9%, transparent 20%),
+    repeating-conic-gradient(from 18deg, transparent 0 8deg, rgba(127, 199, 228, 0.16) 8deg 10deg, transparent 10deg 17deg),
+    radial-gradient(circle, transparent 0 28%, rgba(127, 199, 228, 0.1) 29% 29.3%, transparent 29.5% 46%, rgba(240, 164, 91, 0.09) 46.3% 46.6%, transparent 46.9%);
+  filter: blur(0.2px);
+  opacity: 0.9;
+  transform: translate(-50%, -50%) rotate(-18deg) scaleY(0.58);
+}
+
+.scan-ring {
+  position: absolute;
+  z-index: 4;
+  border: 1px solid rgba(241, 246, 240, 0.18);
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.scan-ring-one {
+  top: 18%;
+  left: 31%;
+  width: 34%;
+  aspect-ratio: 1;
+}
+
+.scan-ring-two {
+  right: 9%;
+  bottom: 16%;
+  width: 24%;
+  aspect-ratio: 1;
+  opacity: 0.48;
+}
+
+.map-route {
+  position: absolute;
+  z-index: 5;
+  height: 1px;
+  transform-origin: left center;
+  background: linear-gradient(90deg, transparent, rgba(127, 199, 228, 0.76), rgba(240, 164, 91, 0.56), transparent);
+  box-shadow: 0 0 14px rgba(127, 199, 228, 0.22);
+}
+
+.route-veyr-halcyon {
+  top: 47%;
+  left: 22%;
+  width: 29%;
+  transform: rotate(-26deg);
+}
+
+.route-halcyon-eos {
+  top: 34%;
+  left: 48%;
+  width: 31%;
+  transform: rotate(-8deg);
+}
+
+.route-halcyon-nadir {
+  top: 39%;
+  left: 49%;
+  width: 25%;
+  transform: rotate(42deg);
+}
+
+.route-veyr-nadir {
+  top: 59%;
+  left: 24%;
+  width: 46%;
+  transform: rotate(9deg);
+  opacity: 0.62;
+}
+
+.sector-label {
+  position: absolute;
+  z-index: 6;
+  border-left: 1px solid rgba(240, 164, 91, 0.74);
+  padding-left: 12px;
+  color: rgba(241, 246, 240, 0.56);
+  font-size: 0.64rem;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.sector-label-one {
+  top: 12%;
+  left: 6%;
+}
+
+.sector-label-two {
+  right: 10%;
+  bottom: 11%;
+}
+
+.planet-pin {
+  z-index: 8;
+}
+
+.planet-pin span {
+  width: 18px;
+  height: 18px;
+  border: 1px solid rgba(255, 209, 108, 0.82);
+  background:
+    radial-gradient(circle at 34% 27%, #fff1b0, #f5a51e 32%, #8f4d05 72%);
+  box-shadow:
+    0 0 0 8px rgba(240, 164, 91, 0.08),
+    0 0 34px rgba(240, 164, 91, 0.68);
+}
+
+.planet-pin strong {
+  color: rgba(241, 246, 240, 0.72);
+  letter-spacing: 0.2em;
+}
+
+.planet-pin.is-active span,
+.planet-pin:hover span {
+  transform: scale(1.72);
+  box-shadow:
+    0 0 0 12px rgba(240, 164, 91, 0.1),
+    0 0 48px rgba(240, 164, 91, 0.86);
+}
+
+.planet-readout {
+  min-height: 610px;
+  justify-content: center;
+  border: 0;
+  border-left: 1px solid rgba(241, 246, 240, 0.13);
+  background:
+    radial-gradient(circle at 40% 22%, rgba(240, 164, 91, 0.1), transparent 11rem),
+    rgba(3, 7, 13, 0.94);
+  padding: clamp(28px, 4vw, 52px);
+}
+
+.planet-readout > span,
+.planet-readout small {
+  color: var(--gold);
+}
+
+.planet-readout h3 {
+  font-size: clamp(3.5rem, 5vw, 5.6rem);
+}
+
+.planet-readout p {
+  color: rgba(241, 246, 240, 0.62);
+}
+
+.readout-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px 18px;
+  margin-top: 42px;
+  border-top: 1px solid rgba(241, 246, 240, 0.12);
+  padding-top: 24px;
+}
+
+.readout-grid span,
+.readout-grid strong {
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.readout-grid span {
+  color: rgba(241, 246, 240, 0.48);
+}
+
+.readout-grid strong {
+  color: rgba(241, 246, 240, 0.86);
+}
+
+.build-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.58fr);
+}
+
+.gameplay-frame,
+.build-copy {
+  min-height: 560px;
+}
+
+.build-copy h2 {
+  font-size: clamp(2.7rem, 4.6vw, 5.6rem);
+}
+
+.research-screenshot {
+  min-height: 230px;
+}
+
+.discover-hero {
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.48fr);
+}
+
+.planet-screenshot {
+  min-height: 500px;
+}
+
+.discovery-grid {
+  margin-top: 20px;
+}
+
+.discovery-grid article {
+  min-height: 190px;
+}
+
+.discovery-grid h3 {
+  margin-top: 34px;
+}
+
+.research-header {
+  grid-template-columns: minmax(320px, 0.52fr) minmax(0, 1fr);
+}
+
+.video-trailer {
+  min-height: 340px;
+}
+
+.timeline {
+  margin-top: 20px;
+}
+
+.timeline li {
+  min-height: 150px;
+}
+
+.timeline strong {
+  margin-top: 44px;
+}
+
+.community-section {
+  padding-top: clamp(64px, 8vw, 118px);
+}
+
+@media (max-width: 1100px) {
+  .vision-grid,
+  .explore-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .vision-copy,
+  .planet-readout {
+    border-left: 0;
+    border-top: 1px solid rgba(241, 246, 240, 0.13);
+  }
+
+  .galaxy-stage,
+  .planet-readout {
+    min-height: 520px;
+  }
+}
+
+@media (max-width: 700px) {
+  .content-section {
+    width: calc(100vw - 28px);
+    padding-block: 56px;
+  }
+
+  .section-heading h2,
+  .vision-copy h2,
+  .build-copy h2,
+  .discover-hero h2,
+  .research-header h2,
+  .community-section h2 {
+    max-width: 11ch;
+    font-size: clamp(2.45rem, 12vw, 4.4rem);
+  }
+
+  .vision-image,
+  .concept-art,
+  .galaxy-stage,
+  .gameplay-frame,
+  .build-copy,
+  .planet-screenshot,
+  .planet-readout {
+    min-height: 360px;
+  }
+
+  .planet-readout h3 {
+    font-size: clamp(3rem, 16vw, 4.7rem);
+  }
+
+  .galaxy-core {
+    width: 86vw;
+  }
+
+  .sector-label {
+    display: none;
+  }
+
+  #vision .vision-grid {
+    display: grid;
+    min-height: 0;
+  }
+
+  #vision .vision-copy {
+    position: relative;
+    width: 100%;
+    border-left: 0;
+    border-top: 1px solid rgba(241, 246, 240, 0.13);
+  }
+
+  #vision .vision-image,
+  #vision .concept-art {
+    min-height: 360px;
+  }
+}

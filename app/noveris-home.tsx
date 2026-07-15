@@ -374,6 +374,8 @@ function BuildSection({
   activePillar: (typeof buildPillars)[number];
   setActivePillar: (pillar: (typeof buildPillars)[number]) => void;
 }) {
+  const calloutSlots = ["callout-one", "callout-two", "callout-three"];
+
   return (
     <Section id="build" label="Build">
       <div className="build-grid">
@@ -386,9 +388,11 @@ function BuildSection({
             loading="lazy"
             decoding="async"
           />
-          <div className="ui-callout callout-one">{activePillar.callout}</div>
-          <div className="ui-callout callout-two">Trade corridor online</div>
-          <div className="ui-callout callout-three">Megastructure phase II</div>
+          {activePillar.callouts.map((callout, index) => (
+            <div className={`ui-callout ${calloutSlots[index]}`} key={callout}>
+              {callout}
+            </div>
+          ))}
         </div>
         <div className="build-copy">
           <h2>Collect the universe. Grow without end.</h2>

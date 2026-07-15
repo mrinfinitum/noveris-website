@@ -2754,3 +2754,224 @@ body {
     padding-block: 16px;
   }
 }
+
+/* Civilization choice system */
+.civilization-system {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1px;
+  min-height: 290px;
+  margin-top: 34px;
+  overflow: hidden;
+  border: 1px solid rgba(241, 246, 240, 0.12);
+  background:
+    radial-gradient(circle at 13% 52%, rgba(240, 164, 91, 0.24), transparent 9rem),
+    radial-gradient(circle at 72% 32%, rgba(127, 199, 228, 0.16), transparent 16rem),
+    linear-gradient(rgba(241, 246, 240, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(241, 246, 240, 0.035) 1px, transparent 1px),
+    #03070d;
+  background-size: auto, auto, 88px 88px, 88px 88px, auto;
+}
+
+.civilization-system::before,
+.civilization-system::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+}
+
+.civilization-system::before {
+  background:
+    radial-gradient(ellipse at 50% 56%, transparent 0 34%, rgba(241, 246, 240, 0.08) 34.2% 34.45%, transparent 34.7%),
+    radial-gradient(ellipse at 50% 56%, transparent 0 48%, rgba(241, 246, 240, 0.06) 48.2% 48.45%, transparent 48.7%),
+    linear-gradient(90deg, transparent 8%, rgba(240, 164, 91, 0.45) 16%, rgba(127, 199, 228, 0.42) 36%, rgba(113, 214, 156, 0.36) 55%, rgba(172, 126, 255, 0.34) 73%, rgba(240, 164, 91, 0.45) 92%, transparent);
+  mask-image: linear-gradient(180deg, transparent 0 42%, black 48% 55%, transparent 62%);
+  opacity: 0.9;
+}
+
+.civilization-system::after {
+  background:
+    radial-gradient(circle at 18% 52%, rgba(240, 164, 91, 0.5) 0 0.28rem, transparent 0.34rem),
+    radial-gradient(circle at 35% 41%, rgba(127, 199, 228, 0.52) 0 0.28rem, transparent 0.34rem),
+    radial-gradient(circle at 53% 52%, rgba(113, 214, 156, 0.48) 0 0.28rem, transparent 0.34rem),
+    radial-gradient(circle at 70% 41%, rgba(172, 126, 255, 0.48) 0 0.28rem, transparent 0.34rem),
+    radial-gradient(circle at 87% 52%, rgba(240, 164, 91, 0.5) 0 0.28rem, transparent 0.34rem);
+}
+
+.civilization-system-core {
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  width: 118px;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid rgba(240, 164, 91, 0.24);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle, rgba(240, 164, 91, 0.48) 0 7%, rgba(240, 164, 91, 0.12) 8% 36%, transparent 37%),
+    rgba(3, 7, 13, 0.72);
+  color: rgba(241, 246, 240, 0.68);
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.civilization-system-core span,
+.civilization-system-core strong,
+.civilization-node span,
+.civilization-node strong {
+  font-size: 0.58rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.civilization-system-core strong {
+  color: var(--gold);
+  font-size: 0.62rem;
+}
+
+.civilization-node {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  align-content: end;
+  min-height: 290px;
+  border-right: 1px solid rgba(241, 246, 240, 0.08);
+  padding: 24px;
+}
+
+.civilization-node::before {
+  position: absolute;
+  top: var(--node-y, 32%);
+  left: 50%;
+  width: 88px;
+  aspect-ratio: 1;
+  border: 1px solid rgba(241, 246, 240, 0.16);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle, var(--node-color, rgba(240, 164, 91, 0.58)) 0 7%, transparent 8%),
+    radial-gradient(circle, transparent 0 42%, rgba(241, 246, 240, 0.13) 43% 44%, transparent 45%);
+  content: "";
+  transform: translate(-50%, -50%);
+}
+
+.civilization-node::after {
+  position: absolute;
+  top: var(--node-y, 32%);
+  left: 50%;
+  width: 1px;
+  height: 42%;
+  background: linear-gradient(180deg, var(--node-color, rgba(240, 164, 91, 0.5)), transparent);
+  content: "";
+  opacity: 0.7;
+}
+
+.civilization-node span {
+  color: var(--node-color, var(--gold));
+}
+
+.civilization-node strong {
+  margin-top: 8px;
+  color: rgba(241, 246, 240, 0.82);
+}
+
+.civilization-node:nth-of-type(2),
+.accent-amber {
+  --node-color: rgba(240, 164, 91, 0.82);
+  --node-y: 58%;
+}
+
+.civilization-node:nth-of-type(3),
+.accent-cyan {
+  --node-color: rgba(127, 199, 228, 0.78);
+  --node-y: 38%;
+}
+
+.civilization-node:nth-of-type(4),
+.accent-green {
+  --node-color: rgba(113, 214, 156, 0.78);
+  --node-y: 58%;
+}
+
+.civilization-node:nth-of-type(5),
+.accent-violet {
+  --node-color: rgba(172, 126, 255, 0.78);
+  --node-y: 38%;
+}
+
+.civilization-node:nth-of-type(6),
+.accent-gold {
+  --node-color: rgba(240, 198, 104, 0.82);
+  --node-y: 58%;
+}
+
+.civilization-track {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-auto-flow: row;
+  grid-auto-columns: unset;
+  gap: 1px;
+  margin-top: 1px;
+  overflow: visible;
+  padding: 0;
+  background: rgba(241, 246, 240, 0.12);
+}
+
+.civilization-card {
+  min-width: 0;
+  min-height: 230px;
+  border: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 34%),
+    radial-gradient(circle at 82% 18%, var(--node-color, rgba(240, 164, 91, 0.18)), transparent 7rem),
+    #05090f;
+}
+
+.civilization-card span {
+  color: var(--node-color, var(--gold));
+  font-size: 0.58rem;
+  line-height: 1.75;
+}
+
+.civilization-card h3 {
+  overflow-wrap: anywhere;
+  font-size: clamp(1.22rem, 1.55vw, 1.74rem);
+  letter-spacing: 0;
+}
+
+.civilization-card p {
+  color: rgba(241, 246, 240, 0.62);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 1100px) {
+  .civilization-system,
+  .civilization-track {
+    min-width: 980px;
+  }
+
+  #civilizations {
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .civilization-system,
+  .civilization-track {
+    min-width: 860px;
+  }
+
+  .civilization-system,
+  .civilization-node {
+    min-height: 260px;
+  }
+
+  .civilization-card {
+    min-height: 230px;
+  }
+}

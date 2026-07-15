@@ -264,6 +264,21 @@ function CivilizationsSection() {
       <div className="section-heading">
         <h2>Choose what humanity becomes.</h2>
       </div>
+      <div className="civilization-system" aria-hidden="true">
+        <div className="civilization-system-core">
+          <span>Origin</span>
+          <strong>First Spark</strong>
+        </div>
+        {civilizations.map((civilization, index) => (
+          <div
+            className={`civilization-node accent-${civilization.accent}`}
+            key={civilization.name}
+          >
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <strong>{civilization.name}</strong>
+          </div>
+        ))}
+      </div>
       <div className="civilization-track">
         {civilizations.map((civilization, index) => (
           <motion.article

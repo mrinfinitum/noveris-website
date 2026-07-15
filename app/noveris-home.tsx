@@ -14,7 +14,6 @@ import {
   explorePlanets,
   heroActions,
   navItems,
-  researchEras,
   structuredData,
   visionLines,
 } from "./noveris-content";
@@ -24,11 +23,9 @@ type MediaKind =
   | "hero-planet"
   | "hero-ship"
   | "galaxy-background"
-  | "research-screenshot"
   | "planet-screenshot"
   | "civilization-artwork"
   | "gameplay-ui"
-  | "video-trailer"
   | "concept-art";
 
 const mediaAssets: Partial<
@@ -71,19 +68,9 @@ const mediaAssets: Partial<
     alt: "Retro minimal build network showing colony automation, trade routes, ships, and orbital infrastructure.",
     credit: "NOVERIS concept art",
   },
-  "research-screenshot": {
-    src: "/media/retro/noveris-retro-research-launch.png",
-    alt: "Retro minimal research launch gantry with spacecraft, orbital arcs, and distant planet rings.",
-    credit: "NOVERIS concept art",
-  },
   "planet-screenshot": {
     src: "/media/retro/noveris-retro-ocean-world.png",
     alt: "Retro minimal ocean world with research habitats, water reflections, and ancient ruins.",
-    credit: "NOVERIS concept art",
-  },
-  "video-trailer": {
-    src: "/media/retro/noveris-retro-research-launch.png",
-    alt: "Retro minimal launch and research facility beneath orbit lines and a ringed planet.",
     credit: "NOVERIS concept art",
   },
 };
@@ -206,7 +193,6 @@ export function NoverisHome() {
       <ExploreSection activePlanet={activePlanet} setActivePlanet={setActivePlanet} />
       <BuildSection />
       <DiscoverSection />
-      <ResearchSection />
       <CommunitySection />
     </main>
   );
@@ -288,7 +274,6 @@ function CivilizationsSection() {
             viewport={{ once: true, margin: "-120px" }}
             transition={{ duration: 0.65, delay: index * 0.06 }}
           >
-            <MediaPlaceholder kind="civilization-artwork" label={civilization.name} />
             <div>
               <span>{civilization.theme}</span>
               <h3>{civilization.name}</h3>
@@ -382,7 +367,14 @@ function BuildSection() {
               <span key={pillar}>{pillar}</span>
             ))}
           </div>
-          <MediaPlaceholder kind="research-screenshot" label="Research Screenshot" />
+          <div className="build-stat-grid" aria-label="Build systems">
+            <span>Colonies</span>
+            <strong>12</strong>
+            <span>Trade routes</span>
+            <strong>48</strong>
+            <span>Automation</span>
+            <strong>87%</strong>
+          </div>
         </div>
       </div>
     </Section>
@@ -407,31 +399,6 @@ function DiscoverSection() {
           </article>
         ))}
       </div>
-    </Section>
-  );
-}
-
-function ResearchSection() {
-  return (
-    <Section id="research" label="Research">
-      <div className="research-header">
-        <h2>From first tools to galactic architecture.</h2>
-        <MediaPlaceholder kind="video-trailer" label="Video Trailer" />
-      </div>
-      <ol className="timeline">
-        {researchEras.map((era, index) => (
-          <motion.li
-            key={era}
-            initial={{ opacity: 0, y: 28 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.55, delay: index * 0.05 }}
-          >
-            <span>{String(index + 1).padStart(2, "0")}</span>
-            <strong>{era}</strong>
-          </motion.li>
-        ))}
-      </ol>
     </Section>
   );
 }

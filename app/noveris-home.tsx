@@ -239,8 +239,7 @@ function Header() {
   return (
     <header className="site-header">
       <a className="brand-mark" href="#top" aria-label="NOVERIS home">
-        <span className="brand-orbit" />
-        NOVERIS
+        <img src="/media/noveris-tag.png" alt="NOVERIS - The Future We Build" />
       </a>
       <nav aria-label="Primary navigation">
         {navItems.map((item) => (

@@ -70,32 +70,15 @@ button {
 .brand-mark {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  color: rgba(255, 255, 255, 0.92);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
+  width: clamp(132px, 15vw, 220px);
+  opacity: 0.94;
+  filter: drop-shadow(0 0 22px rgba(102, 231, 255, 0.18));
 }
 
-.brand-orbit {
-  position: relative;
-  width: 28px;
-  height: 28px;
-  border: 1px solid rgba(102, 231, 255, 0.5);
-  border-radius: 999px;
-  box-shadow: 0 0 32px rgba(102, 231, 255, 0.28);
-}
-
-.brand-orbit::after {
-  position: absolute;
-  top: 6px;
-  left: 20px;
-  width: 6px;
-  height: 6px;
-  border-radius: 999px;
-  background: var(--gold);
-  box-shadow: 0 0 16px rgba(215, 184, 106, 0.8);
-  content: "";
+.brand-mark img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .site-header nav {

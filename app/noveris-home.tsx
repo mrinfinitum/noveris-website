@@ -54,8 +54,8 @@ const mediaAssets: Partial<
     credit: "NOVERIS game art",
   },
   "concept-art": {
-    src: "/media/retro/noveris-retro-colony-hero.png",
-    alt: "Retro minimal planet-side colony scene with habitats, orbit trails, and passing ships.",
+    src: "/media/retro/noveris-retro-first-spark.png",
+    alt: "Retro minimal NOVERIS first spark evolving into connected planets, ships, resources, and a galaxy map.",
     credit: "NOVERIS concept art",
   },
   "civilization-artwork": {

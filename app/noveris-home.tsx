@@ -30,6 +30,58 @@ type MediaKind =
   | "video-trailer"
   | "concept-art";
 
+const mediaAssets: Partial<
+  Record<
+    MediaKind,
+    {
+      src: string;
+      alt: string;
+      credit: string;
+    }
+  >
+> = {
+  "galaxy-background": {
+    src: "/media/nasa-carina-cosmic-cliffs.jpg",
+    alt: "NASA Webb image of the Cosmic Cliffs in the Carina Nebula.",
+    credit: "NASA / ESA / CSA / STScI",
+  },
+  "hero-planet": {
+    src: "/media/noveris-ocean-world.png",
+    alt: "NOVERIS ocean world with rings, aurora, distant ship, and coastal cities.",
+    credit: "NOVERIS game art",
+  },
+  "concept-art": {
+    src: "/media/noveris-civilization-vista.png",
+    alt: "NOVERIS civilization vista with orbital elevators, glass habitats, and coastal megastructures.",
+    credit: "NOVERIS game art",
+  },
+  "civilization-artwork": {
+    src: "/media/noveris-civilization-vista.png",
+    alt: "NOVERIS interstellar colony key art.",
+    credit: "NOVERIS game art",
+  },
+  "gameplay-ui": {
+    src: "/media/noveris-gameplay-ui.png",
+    alt: "NOVERIS gameplay interface showing colonies, research, trade routes, and orbital assets.",
+    credit: "NOVERIS game capture",
+  },
+  "research-screenshot": {
+    src: "/media/noveris-gameplay-ui.png",
+    alt: "NOVERIS strategy interface with research and resource flow panels.",
+    credit: "NOVERIS game capture",
+  },
+  "planet-screenshot": {
+    src: "/media/noveris-ocean-world.png",
+    alt: "NOVERIS exotic ocean world with luminous settlements and ancient submerged ruins.",
+    credit: "NOVERIS game art",
+  },
+  "video-trailer": {
+    src: "/media/nasa-pillars-creation.jpg",
+    alt: "NASA Hubble near-infrared image of the Pillars of Creation.",
+    credit: "NASA / ESA / Hubble Heritage Team",
+  },
+};
+
 const fadeUp = {
   hidden: { opacity: 0, y: 44 },
   visible: { opacity: 1, y: 0 },
@@ -455,9 +507,20 @@ function HeroShip() {
 }
 
 function MediaPlaceholder({ kind, label }: { kind: MediaKind; label: string }) {
+  const asset = mediaAssets[kind];
+
   return (
-    <div className={`media-placeholder ${kind}`} data-media={label}>
-      <span className="media-label">{label}</span>
+    <div className={`media-placeholder ${kind} ${asset ? "has-image" : ""}`} data-media={label}>
+      {asset ? (
+        <img
+          src={asset.src}
+          alt={asset.alt}
+          className="media-image"
+          loading={kind === "galaxy-background" || kind === "hero-planet" ? "eager" : "lazy"}
+          decoding="async"
+        />
+      ) : null}
+      <span className="media-label">{asset?.credit ?? label}</span>
     </div>
   );
 }

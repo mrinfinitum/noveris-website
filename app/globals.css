@@ -171,16 +171,31 @@ button {
   background: linear-gradient(135deg, rgba(102, 231, 255, 0.12), rgba(215, 184, 106, 0.06));
 }
 
+.media-placeholder.has-image {
+  background: #02060d;
+}
+
+.media-image {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.01);
+}
+
 .media-label {
   position: absolute;
   right: 18px;
   bottom: 16px;
-  z-index: 3;
-  color: rgba(227, 246, 255, 0.52);
+  z-index: 5;
+  color: rgba(227, 246, 255, 0.58);
   font-size: 0.66rem;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.7);
 }
 
 .galaxy-background .galaxy-background,
@@ -978,6 +993,111 @@ button {
   font-weight: 800;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+}
+
+.media-placeholder.has-image::before,
+.media-placeholder.has-image::after,
+.media-placeholder.has-image.galaxy-background::before,
+.media-placeholder.has-image.galaxy-background::after,
+.galaxy-stage .media-placeholder.has-image.galaxy-background::before,
+.galaxy-stage .media-placeholder.has-image.galaxy-background::after {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  clip-path: none;
+  transform: none;
+  border: 0;
+  border-radius: 0;
+  content: "";
+  pointer-events: none;
+}
+
+.media-placeholder.has-image::before,
+.media-placeholder.has-image.galaxy-background::before,
+.galaxy-stage .media-placeholder.has-image.galaxy-background::before {
+  background:
+    linear-gradient(180deg, rgba(2, 6, 13, 0.08), rgba(2, 6, 13, 0.68)),
+    radial-gradient(circle at 52% 40%, transparent 0 34%, rgba(2, 6, 13, 0.36) 72%);
+  opacity: 1;
+}
+
+.media-placeholder.has-image::after,
+.media-placeholder.has-image.galaxy-background::after,
+.galaxy-stage .media-placeholder.has-image.galaxy-background::after {
+  background:
+    linear-gradient(105deg, transparent 18%, rgba(102, 231, 255, 0.12), transparent 62%),
+    radial-gradient(circle at 16% 12%, rgba(255, 255, 255, 0.2), transparent 18%),
+    radial-gradient(circle at 72% 78%, rgba(215, 184, 106, 0.1), transparent 22%);
+  opacity: 0.72;
+  mix-blend-mode: screen;
+}
+
+.galaxy-background.has-image .media-image {
+  object-position: center 46%;
+}
+
+.galaxy-stage .galaxy-background.has-image .media-image {
+  object-position: center center;
+}
+
+.hero-planet.has-image {
+  border-radius: 999px;
+  box-shadow:
+    inset -70px -60px 120px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(102, 231, 255, 0.18),
+    0 0 130px rgba(102, 231, 255, 0.36);
+}
+
+.hero-planet.has-image .media-image {
+  object-position: 50% 42%;
+}
+
+.hero-planet.has-image::before,
+.hero-planet.has-image::after {
+  border-radius: inherit;
+}
+
+.hero-planet.has-image::before {
+  background:
+    radial-gradient(circle at 32% 22%, rgba(255, 255, 255, 0.36), transparent 13%),
+    radial-gradient(circle at 50% 50%, transparent 45%, rgba(102, 231, 255, 0.2) 65%, rgba(2, 6, 13, 0.58) 100%);
+}
+
+.hero-planet.has-image::after {
+  inset: 12% -13%;
+  height: 34%;
+  margin: auto;
+  border: 1px solid rgba(215, 184, 106, 0.16);
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(215, 184, 106, 0.2), transparent);
+  filter: blur(1px);
+  transform: rotate(-11deg);
+}
+
+.concept-art.has-image,
+.planet-screenshot.has-image {
+  border-radius: 0;
+}
+
+.concept-art.has-image .media-image {
+  object-position: 53% center;
+}
+
+.civilization-artwork.has-image .media-image {
+  object-position: 42% center;
+}
+
+.gameplay-ui.has-image .media-image,
+.research-screenshot.has-image .media-image {
+  object-position: center center;
+}
+
+.planet-screenshot.has-image .media-image {
+  object-position: center center;
+}
+
+.video-trailer.has-image .media-image {
+  object-position: 50% 35%;
 }
 
 @media (max-width: 1100px) {

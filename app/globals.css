@@ -3890,3 +3890,19 @@ body {
     min-height: 360px;
   }
 }
+
+/* Footer card must align to the same centered frame as page sections. */
+.community-section {
+  display: block;
+  width: min(1680px, calc(100vw - 36px));
+  margin-inline: auto;
+}
+
+.community-section > :not(.section-kicker) {
+  grid-column: auto;
+}
+
+.community-layout,
+.footer-line {
+  width: 100%;
+}

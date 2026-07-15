@@ -95,8 +95,6 @@ export function NoverisHome() {
   const heroDrift = useTransform(smoothProgress, [0, 0.45], [0, -140]);
   const planetScale = useTransform(smoothProgress, [0, 0.55], [1, 1.18]);
   const planetX = useTransform(mouseX, [-0.5, 0.5], [-26, 26]);
-  const shipX = useTransform(mouseX, [-0.5, 0.5], [18, -18]);
-  const shipY = useTransform(mouseY, [-0.5, 0.5], [10, -10]);
   const [activePlanet, setActivePlanet] = useState(explorePlanets[1]);
 
   useEffect(() => {
@@ -157,26 +155,11 @@ export function NoverisHome() {
 
       <section className="hero-section min-h-screen overflow-hidden" id="top" aria-label="NOVERIS hero">
         <GalaxyBackground mouseX={mouseX} mouseY={mouseY} />
-        <motion.div
-          className="hero-planet-wrap"
-          style={{
-            y: heroDrift,
-            scale: planetScale,
-            x: planetX,
-          }}
-        >
-          <HeroPlanet />
-        </motion.div>
-        <motion.div
-          className="ship-primary"
-          style={{
-            x: shipX,
-            y: shipY,
-          }}
-        >
-          <HeroShip />
+        <motion.div className="hero-brand-scene" style={{ y: heroDrift, scale: planetScale, x: planetX }}>
+          <img src="/media/noveris-tag.png" alt="" aria-hidden="true" />
         </motion.div>
         <div className="hero-copy">
+          <h1 className="sr-only">NOVERIS - The Future We Build</h1>
           <motion.p
             className="section-kicker"
             initial="hidden"
@@ -185,22 +168,6 @@ export function NoverisHome() {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
             Humanity&apos;s future begins beyond the horizon
-          </motion.p>
-          <motion.h1
-            initial={{ opacity: 0, y: 34, filter: "blur(10px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ duration: 1.1, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
-          >
-            NOVERIS
-          </motion.h1>
-          <motion.p
-            className="hero-tagline"
-            initial="hidden"
-            animate="visible"
-            variants={fadeUp}
-            transition={{ duration: 0.85, delay: 0.28, ease: [0.22, 1, 0.36, 1] }}
-          >
-            The Future We Build
           </motion.p>
           <motion.div
             className="hero-actions"
@@ -239,7 +206,7 @@ function Header() {
   return (
     <header className="site-header">
       <a className="brand-mark" href="#top" aria-label="NOVERIS home">
-        <img src="/media/noveris-tag.png" alt="NOVERIS - The Future We Build" />
+        <img src="/media/derived/noveris-wordmark.png" alt="NOVERIS - The Future We Build" />
       </a>
       <nav aria-label="Primary navigation">
         {navItems.map((item) => (
@@ -495,14 +462,6 @@ function GalaxyBackground({
       <MediaPlaceholder kind="galaxy-background" label="Galaxy Background" />
     </motion.div>
   );
-}
-
-function HeroPlanet() {
-  return <MediaPlaceholder kind="hero-planet" label="Hero Planet" />;
-}
-
-function HeroShip() {
-  return <MediaPlaceholder kind="hero-ship" label="Hero Ship" />;
 }
 
 function MediaPlaceholder({ kind, label }: { kind: MediaKind; label: string }) {

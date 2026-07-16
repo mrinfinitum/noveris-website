@@ -4274,14 +4274,14 @@ body {
   }
 
   .hero-brand-scene {
-    inset: 84px 0 -2vh;
+    inset: 64px 0 -2vh;
     opacity: 0.94;
     filter: saturate(1.03) contrast(1.05);
     mask-image: linear-gradient(180deg, black 0%, black 80%, transparent 100%);
   }
 
   .hero-brand-scene img {
-    object-position: center center;
+    object-position: center 58%;
     transform: scale(1.02);
   }
 
@@ -4850,6 +4850,10 @@ body {
   .hero-section {
     overflow: clip;
     contain: paint;
+  }
+
+  .hero-section > .galaxy-background {
+    display: none;
   }
 
   .galaxy-background {

@@ -6141,6 +6141,11 @@ body {
     padding-top: 116px;
   }
 
+  .pitch-hero-card {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
   .pitch-hero::after {
     background:
       radial-gradient(circle at 50% 28%, rgba(104, 227, 255, 0.16), transparent 24rem),

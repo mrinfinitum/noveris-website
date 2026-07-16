@@ -154,11 +154,17 @@ export function NoverisHome() {
       <section className="hero-section min-h-screen overflow-hidden" id="top" aria-label="NOVERIS hero">
         <GalaxyBackground mouseX={mouseX} mouseY={mouseY} />
         <motion.div className="hero-brand-scene" style={{ y: heroDrift, scale: planetScale, x: planetX }}>
-          <img
-            src="/media/retro/noveris-retro-colony-hero.png"
-            alt=""
-            aria-hidden="true"
-          />
+          <picture>
+            <source
+              media="(max-width: 860px)"
+              srcSet="/media/retro/noveris-retro-colony-hero-mobile.png"
+            />
+            <img
+              src="/media/retro/noveris-retro-colony-hero.png"
+              alt=""
+              aria-hidden="true"
+            />
+          </picture>
         </motion.div>
         <div className="hero-copy">
           <h1 className="sr-only">NOVERIS - The Future We Build</h1>

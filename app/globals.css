@@ -5813,10 +5813,59 @@ body {
 }
 
 .pitch-loop-art {
+  display: block;
   width: 100%;
   height: 100%;
   min-height: 540px;
   object-fit: cover;
+}
+
+.pitch-loop-art-wrap {
+  position: relative;
+  min-height: 100%;
+  overflow: hidden;
+  background: #05080d;
+}
+
+.pitch-loop-art-wrap::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, transparent 58%, rgba(2, 4, 8, 0.28)),
+    linear-gradient(90deg, transparent 72%, rgba(2, 4, 8, 0.36));
+}
+
+.pitch-loop-callout {
+  position: absolute;
+  z-index: 2;
+  max-width: min(300px, 44%);
+  padding: 16px 20px;
+  border: 1px solid rgba(241, 246, 240, 0.18);
+  background: rgba(3, 8, 15, 0.72);
+  color: rgba(241, 246, 240, 0.78);
+  font-size: 0.74rem;
+  font-weight: 950;
+  letter-spacing: 0.12em;
+  line-height: 1.35;
+  text-transform: uppercase;
+  backdrop-filter: blur(14px);
+}
+
+.pitch-loop-callout-top {
+  top: 12%;
+  right: 10%;
+}
+
+.pitch-loop-callout-mid {
+  top: 52%;
+  left: 10%;
+}
+
+.pitch-loop-callout-bottom {
+  right: 12%;
+  bottom: 10%;
 }
 
 .pitch-loop-copy {
@@ -5838,15 +5887,36 @@ body {
   margin-top: 34px;
 }
 
-.pitch-loop-steps span {
+.pitch-loop-steps button {
   min-height: 78px;
   padding: 18px;
   border: 1px solid rgba(255, 255, 255, 0.14);
+  background: transparent;
   color: #f3f7f0;
+  cursor: pointer;
   font-size: 0.78rem;
   font-weight: 950;
   letter-spacing: 0.12em;
+  text-align: left;
   text-transform: uppercase;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.pitch-loop-steps button:hover,
+.pitch-loop-steps button:focus-visible {
+  border-color: rgba(255, 159, 10, 0.66);
+  outline: 0;
+  transform: translateY(-1px);
+}
+
+.pitch-loop-steps button.is-active {
+  border-color: #ff9f0a;
+  background: #ff9f0a;
+  color: #05080d;
 }
 
 .pitch-loop-steps small {
@@ -5855,6 +5925,29 @@ body {
   color: #ff9f0a;
   font-size: 0.64rem;
   letter-spacing: 0.24em;
+}
+
+.pitch-loop-steps button.is-active small {
+  color: #05080d;
+}
+
+.pitch-loop-detail {
+  margin-top: 34px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.pitch-loop-detail span {
+  display: block;
+  color: #ff9f0a;
+  font-size: 0.7rem;
+  font-weight: 950;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.pitch-loop-detail p {
+  margin-top: 16px;
 }
 
 .pitch-section-heading {
@@ -6088,6 +6181,11 @@ body {
   .pitch-loop-art {
     min-height: 360px;
     aspect-ratio: 1.05;
+  }
+
+  .pitch-loop-callout {
+    padding: 12px 14px;
+    font-size: 0.62rem;
   }
 
   .pitch-loop-copy {

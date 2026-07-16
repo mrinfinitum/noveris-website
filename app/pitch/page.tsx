@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PitchLoopShowcase } from "./pitch-loop-showcase";
 
 const proofPoints = [
   {
@@ -16,14 +17,6 @@ const proofPoints = [
     title: "Big scope, modular production",
     body: "The game can start with a strong vertical slice, then grow by adding systems, biomes, discoveries, and civilization archetypes over time.",
   },
-];
-
-const loopSteps = [
-  "Collect resources",
-  "Evolve worlds",
-  "Explore systems",
-  "Automate colonies",
-  "Ascend civilizations",
 ];
 
 const civilizationCards = [
@@ -127,26 +120,7 @@ export default function PitchPage() {
         </div>
       </section>
 
-      <section className="pitch-loop" aria-labelledby="pitch-loop">
-        <img
-          src="/media/build/collect.png"
-          alt=""
-          aria-hidden="true"
-          className="pitch-loop-art"
-        />
-        <div className="pitch-loop-copy">
-          <p className="pitch-kicker">The playable engine</p>
-          <h2 id="pitch-loop">A growth loop that always reveals the next horizon.</h2>
-          <div className="pitch-loop-steps" aria-label="Core gameplay loop">
-            {loopSteps.map((step, index) => (
-              <span key={step}>
-                <small>{String(index + 1).padStart(2, "0")}</small>
-                {step}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
+      <PitchLoopShowcase />
 
       <section className="pitch-section" aria-labelledby="pitch-civs">
         <div className="pitch-section-heading">

@@ -92,6 +92,17 @@ export function NoverisHome() {
   const [activeCivilization, setActiveCivilization] = useState(civilizations[0]);
   const [activeDiscovery, setActiveDiscovery] = useState(discoveries[0]);
   const [activeBuildPillar, setActiveBuildPillar] = useState(buildPillars[0]);
+  const [isMobileHero, setIsMobileHero] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 860px)");
+    const updateMobileHero = () => setIsMobileHero(mediaQuery.matches);
+
+    updateMobileHero();
+    mediaQuery.addEventListener("change", updateMobileHero);
+
+    return () => mediaQuery.removeEventListener("change", updateMobileHero);
+  }, []);
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -153,7 +164,10 @@ export function NoverisHome() {
 
       <section className="hero-section min-h-screen overflow-hidden" id="top" aria-label="NOVERIS hero">
         <GalaxyBackground mouseX={mouseX} mouseY={mouseY} />
-        <motion.div className="hero-brand-scene" style={{ y: heroDrift, scale: planetScale, x: planetX }}>
+        <motion.div
+          className="hero-brand-scene"
+          style={isMobileHero ? undefined : { y: heroDrift, scale: planetScale, x: planetX }}
+        >
           <picture>
             <source
               media="(max-width: 860px)"

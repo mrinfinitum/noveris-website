@@ -89,6 +89,7 @@ export function NoverisHome() {
   const planetScale = useTransform(smoothProgress, [0, 0.55], [1, 1.18]);
   const planetX = useTransform(mouseX, [-0.5, 0.5], [-26, 26]);
   const [activePlanet, setActivePlanet] = useState(explorePlanets[1]);
+  const [activeCivilization, setActiveCivilization] = useState(civilizations[0]);
   const [activeDiscovery, setActiveDiscovery] = useState(discoveries[0]);
   const [activeBuildPillar, setActiveBuildPillar] = useState(buildPillars[0]);
 
@@ -108,15 +109,17 @@ export function NoverisHome() {
     rafId = requestAnimationFrame(raf);
 
     const ctx = gsap.context(() => {
-      gsap.to(".ship-primary", {
-        xPercent: 18,
-        yPercent: -6,
-        rotate: -1.5,
-        duration: 9,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
+      if (document.querySelector(".ship-primary")) {
+        gsap.to(".ship-primary", {
+          xPercent: 18,
+          yPercent: -6,
+          rotate: -1.5,
+          duration: 9,
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+        });
+      }
       gsap.to(".nebula-field", {
         backgroundPosition: "58% 44%, 42% 66%, 50% 50%",
         duration: 18,
@@ -191,7 +194,10 @@ export function NoverisHome() {
       </section>
 
       <VisionSection />
-      <CivilizationsSection />
+      <CivilizationsSection
+        activeCivilization={activeCivilization}
+        setActiveCivilization={setActiveCivilization}
+      />
       <ExploreSection activePlanet={activePlanet} setActivePlanet={setActivePlanet} />
       <BuildSection activePillar={activeBuildPillar} setActivePillar={setActiveBuildPillar} />
       <DiscoverSection activeDiscovery={activeDiscovery} setActiveDiscovery={setActiveDiscovery} />
@@ -260,43 +266,77 @@ function VisionSection() {
   );
 }
 
-function CivilizationsSection() {
+function CivilizationsSection({
+  activeCivilization,
+  setActiveCivilization,
+}: {
+  activeCivilization: (typeof civilizations)[number];
+  setActiveCivilization: (civilization: (typeof civilizations)[number]) => void;
+}) {
   return (
     <Section id="civilizations" label="Civilizations">
-      <div className="section-heading">
-        <h2>Choose what humanity becomes.</h2>
-      </div>
-      <div className="civilization-system" aria-hidden="true">
-        <div className="civilization-system-core">
-          <span>Origin</span>
-          <strong>First Spark</strong>
-        </div>
-        {civilizations.map((civilization, index) => (
-          <div
-            className={`civilization-node accent-${civilization.accent}`}
-            key={civilization.name}
-          >
-            <span>{String(index + 1).padStart(2, "0")}</span>
-            <strong>{civilization.name}</strong>
+      <div className="civ-render-hero civilization-hero">
+        <div className={`civ-render-copy civilization-hero-copy accent-${activeCivilization.accent}`}>
+          <span className="atlas-eyebrow">Civilization path</span>
+          <h2>Choose what humanity becomes.</h2>
+          <div className="civilization-readout" aria-live="polite">
+            <span>Selected doctrine</span>
+            <strong>{activeCivilization.name}</strong>
+            <p>{activeCivilization.doctrine}</p>
           </div>
-        ))}
+          <div className="civilization-metrics" aria-label={`${activeCivilization.name} metrics`}>
+            <span>Signal</span>
+            <strong>{activeCivilization.signal}</strong>
+            <span>Status</span>
+            <strong>{activeCivilization.stat}</strong>
+          </div>
+        </div>
+        <motion.div
+          className={`civ-render-art civilization-hero-art accent-${activeCivilization.accent}`}
+          key={activeCivilization.name}
+          initial={{ opacity: 0, scale: 1.02 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.45 }}
+        >
+          <img
+            src={activeCivilization.image}
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+          />
+          <div className="civilization-legend" aria-hidden="true">
+            <span>01 Shape</span>
+            <span>02 Expand</span>
+            <span>03 Ascend</span>
+          </div>
+        </motion.div>
       </div>
-      <div className="civilization-track">
+      <div className="civ-render-grid civilization-track" role="tablist" aria-label="Civilization paths">
         {civilizations.map((civilization, index) => (
-          <motion.article
-            className={`civilization-card accent-${civilization.accent}`}
+          <motion.button
+            type="button"
+            className={`civ-render-card civilization-card accent-${civilization.accent} ${
+              activeCivilization.name === civilization.name ? "is-active" : ""
+            }`}
             key={civilization.name}
+            role="tab"
+            aria-selected={activeCivilization.name === civilization.name}
+            onClick={() => setActiveCivilization(civilization)}
+            onMouseEnter={() => setActiveCivilization(civilization)}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-120px" }}
             transition={{ duration: 0.65, delay: index * 0.06 }}
           >
+            <img src={civilization.image} alt="" aria-hidden="true" loading="lazy" decoding="async" />
             <div>
+              <small>{String(index + 1).padStart(2, "0")}</small>
               <span>{civilization.theme}</span>
               <h3>{civilization.name}</h3>
               <p>{civilization.description}</p>
             </div>
-          </motion.article>
+          </motion.button>
         ))}
       </div>
     </Section>
@@ -319,15 +359,37 @@ function ExploreSection({
           <div className="galaxy-core" aria-hidden="true" />
           <div className="scan-ring scan-ring-one" aria-hidden="true" />
           <div className="scan-ring scan-ring-two" aria-hidden="true" />
+          <div className="scan-ring scan-ring-three" aria-hidden="true" />
+          <div className="galaxy-dust galaxy-dust-one" aria-hidden="true" />
+          <div className="galaxy-dust galaxy-dust-two" aria-hidden="true" />
+          <div className="route-lane route-lane-one" aria-hidden="true" />
+          <div className="route-lane route-lane-two" aria-hidden="true" />
           <div className="map-route route-veyr-halcyon" aria-hidden="true" />
           <div className="map-route route-halcyon-eos" aria-hidden="true" />
           <div className="map-route route-halcyon-nadir" aria-hidden="true" />
           <div className="map-route route-veyr-nadir" aria-hidden="true" />
+          <div className="map-range map-range-view" aria-hidden="true">View</div>
+          <div className="map-range map-range-probe" aria-hidden="true">Probe</div>
+          <div className="map-node node-one" aria-hidden="true" />
+          <div className="map-node node-two" aria-hidden="true" />
+          <div className="map-node node-three" aria-hidden="true" />
+          <div className="map-node node-four" aria-hidden="true" />
           <div className="sector-label sector-label-one" aria-hidden="true">
             Euclid drift
           </div>
           <div className="sector-label sector-label-two" aria-hidden="true">
             Atlas route
+          </div>
+          <div className="sector-label sector-label-three" aria-hidden="true">
+            Probe veil
+          </div>
+          <div className="map-console map-console-top" aria-hidden="true">
+            <span>Scanner atlas</span>
+            <strong>04 systems linked</strong>
+          </div>
+          <div className="map-console map-console-bottom" aria-hidden="true">
+            <span>Route state</span>
+            <strong>Probe first</strong>
           </div>
           {explorePlanets.map((planet) => (
             <button
@@ -353,13 +415,33 @@ function ExploreSection({
           <h3>{activePlanet.name}</h3>
           <p>{activePlanet.className}</p>
           <small>{activePlanet.orbit}</small>
+          <p className="readout-note">{activePlanet.note}</p>
+          <div className="route-preview">
+            <div>
+              <span>Distance</span>
+              <strong>{activePlanet.distance}</strong>
+            </div>
+            <div>
+              <span>Hazard</span>
+              <strong>{activePlanet.hazard}</strong>
+            </div>
+            <div>
+              <span>Reward</span>
+              <strong>{activePlanet.reward}</strong>
+            </div>
+          </div>
           <div className="readout-grid" aria-hidden="true">
             <span>Signal</span>
-            <strong>92%</strong>
+            <strong>{activePlanet.signal}</strong>
             <span>Finds</span>
-            <strong>07</strong>
+            <strong>{activePlanet.finds}</strong>
             <span>Growth</span>
-            <strong>Rising</strong>
+            <strong>{activePlanet.growth}</strong>
+          </div>
+          <div className="readout-actions" aria-hidden="true">
+            <span>01 Scan</span>
+            <span>02 Catalog</span>
+            <span>03 Route</span>
           </div>
         </motion.aside>
       </div>

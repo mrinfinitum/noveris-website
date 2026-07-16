@@ -2099,6 +2099,7 @@ body {
 .content-section {
   width: min(1680px, calc(100vw - 36px));
   padding: clamp(64px, 8vw, 118px) 0;
+  scroll-margin-top: 96px;
 }
 
 .section-heading h2,
@@ -2198,22 +2199,24 @@ body {
 }
 
 .explore-layout {
-  grid-template-columns: minmax(0, 1fr) minmax(300px, 390px);
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 430px);
   gap: 0;
   border: 1px solid rgba(241, 246, 240, 0.13);
   background: #03070d;
 }
 
 .galaxy-stage {
-  min-height: 610px;
+  min-height: 680px;
   border: 0;
   background:
-    radial-gradient(circle at 42% 50%, rgba(255, 163, 38, 0.16), transparent 5rem),
-    radial-gradient(circle at 56% 44%, rgba(73, 176, 218, 0.16), transparent 11rem),
+    radial-gradient(circle at 49% 50%, rgba(255, 178, 74, 0.2), transparent 4.2rem),
+    radial-gradient(circle at 58% 42%, rgba(73, 176, 218, 0.22), transparent 13rem),
+    radial-gradient(circle at 72% 26%, rgba(255, 163, 38, 0.1), transparent 10rem),
     radial-gradient(ellipse at 52% 52%, rgba(245, 170, 75, 0.2), rgba(88, 149, 196, 0.13) 17%, rgba(4, 9, 16, 0) 46%),
     radial-gradient(circle at 50% 50%, #0e1724 0 1px, transparent 1.3px),
     linear-gradient(180deg, #02050a, #03070d);
-  background-size: auto, auto, auto, 26px 26px, auto;
+  background-size: auto, auto, auto, auto, 26px 26px, auto;
+  isolation: isolate;
 }
 
 .galaxy-stage .media-placeholder.galaxy-background {
@@ -2261,6 +2264,20 @@ body {
   transform: translate(-50%, -50%) rotate(-18deg) scaleY(0.58);
 }
 
+.galaxy-core::before,
+.galaxy-core::after {
+  content: "";
+  position: absolute;
+  inset: 18%;
+  border-radius: 999px;
+  border: 1px solid rgba(127, 199, 228, 0.18);
+}
+
+.galaxy-core::after {
+  inset: 31%;
+  border-color: rgba(240, 164, 91, 0.22);
+}
+
 .scan-ring {
   position: absolute;
   z-index: 4;
@@ -2284,6 +2301,67 @@ body {
   opacity: 0.48;
 }
 
+.scan-ring-three {
+  top: 8%;
+  left: 12%;
+  width: 76%;
+  aspect-ratio: 1;
+  border-color: rgba(127, 199, 228, 0.1);
+  opacity: 0.56;
+  transform: scaleY(0.62) rotate(-9deg);
+}
+
+.galaxy-dust,
+.route-lane {
+  position: absolute;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.galaxy-dust {
+  width: 40%;
+  height: 24%;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 12% 44%, rgba(127, 199, 228, 0.24) 0 2px, transparent 2.5px),
+    radial-gradient(circle at 33% 28%, rgba(240, 164, 91, 0.32) 0 2px, transparent 2.5px),
+    radial-gradient(circle at 58% 62%, rgba(127, 199, 228, 0.18) 0 1.5px, transparent 2px),
+    radial-gradient(circle at 81% 36%, rgba(241, 246, 240, 0.24) 0 1px, transparent 1.5px);
+  filter: blur(0.2px);
+  opacity: 0.68;
+}
+
+.galaxy-dust-one {
+  top: 18%;
+  left: 17%;
+  transform: rotate(-18deg);
+}
+
+.galaxy-dust-two {
+  right: 12%;
+  bottom: 19%;
+  transform: rotate(14deg) scaleX(0.9);
+}
+
+.route-lane {
+  height: 46%;
+  width: 1px;
+  background: linear-gradient(transparent, rgba(127, 199, 228, 0.2), transparent);
+  box-shadow: 0 0 18px rgba(127, 199, 228, 0.12);
+}
+
+.route-lane-one {
+  top: 18%;
+  left: 44%;
+  transform: rotate(24deg);
+}
+
+.route-lane-two {
+  top: 27%;
+  right: 25%;
+  transform: rotate(-58deg);
+}
+
 .map-route {
   position: absolute;
   z-index: 5;
@@ -2291,6 +2369,18 @@ body {
   transform-origin: left center;
   background: linear-gradient(90deg, transparent, rgba(127, 199, 228, 0.76), rgba(240, 164, 91, 0.56), transparent);
   box-shadow: 0 0 14px rgba(127, 199, 228, 0.22);
+}
+
+.map-route::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  right: 18%;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(241, 246, 240, 0.8);
+  box-shadow: 0 0 18px rgba(240, 164, 91, 0.72);
 }
 
 .route-veyr-halcyon {
@@ -2344,6 +2434,113 @@ body {
   bottom: 11%;
 }
 
+.sector-label-three {
+  top: 24%;
+  right: 22%;
+}
+
+.map-range {
+  position: absolute;
+  z-index: 6;
+  border: 1px solid rgba(241, 246, 240, 0.13);
+  border-radius: 999px;
+  color: rgba(241, 246, 240, 0.46);
+  font-size: 0.56rem;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  line-height: 1;
+  pointer-events: none;
+  text-transform: uppercase;
+}
+
+.map-range-view {
+  top: 23%;
+  left: 34%;
+  width: 36%;
+  aspect-ratio: 1;
+  padding: 11px 0 0 14px;
+  transform: scaleY(0.58) rotate(-17deg);
+}
+
+.map-range-probe {
+  top: 11%;
+  left: 23%;
+  width: 58%;
+  aspect-ratio: 1;
+  padding: 13px 0 0 18px;
+  border-color: rgba(127, 199, 228, 0.11);
+  transform: scaleY(0.52) rotate(-17deg);
+}
+
+.map-node {
+  position: absolute;
+  z-index: 7;
+  width: 8px;
+  height: 8px;
+  border: 1px solid rgba(127, 199, 228, 0.62);
+  border-radius: 999px;
+  background: rgba(127, 199, 228, 0.18);
+  box-shadow: 0 0 18px rgba(127, 199, 228, 0.36);
+  pointer-events: none;
+}
+
+.node-one {
+  top: 25%;
+  left: 32%;
+}
+
+.node-two {
+  top: 48%;
+  left: 37%;
+}
+
+.node-three {
+  top: 52%;
+  right: 28%;
+}
+
+.node-four {
+  right: 18%;
+  bottom: 27%;
+}
+
+.map-console {
+  position: absolute;
+  z-index: 9;
+  display: grid;
+  gap: 5px;
+  min-width: 190px;
+  border: 1px solid rgba(241, 246, 240, 0.12);
+  background: rgba(5, 9, 15, 0.72);
+  padding: 14px 16px;
+  pointer-events: none;
+}
+
+.map-console span {
+  color: rgba(240, 164, 91, 0.88);
+  font-size: 0.56rem;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.map-console strong {
+  color: rgba(241, 246, 240, 0.7);
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.map-console-top {
+  top: 10%;
+  right: 7%;
+}
+
+.map-console-bottom {
+  left: 7%;
+  bottom: 9%;
+}
+
 .planet-pin {
   z-index: 8;
 }
@@ -2373,13 +2570,16 @@ body {
 }
 
 .planet-readout {
-  min-height: 610px;
+  min-height: 680px;
   justify-content: center;
   border: 0;
   border-left: 1px solid rgba(241, 246, 240, 0.13);
   background:
-    radial-gradient(circle at 40% 22%, rgba(240, 164, 91, 0.1), transparent 11rem),
+    linear-gradient(90deg, rgba(241, 246, 240, 0.04) 1px, transparent 1px),
+    radial-gradient(circle at 42% 20%, rgba(240, 164, 91, 0.14), transparent 11rem),
+    radial-gradient(circle at 68% 82%, rgba(127, 199, 228, 0.08), transparent 12rem),
     rgba(3, 7, 13, 0.94);
+  background-size: 112px 100%, auto, auto, auto;
   padding: clamp(28px, 4vw, 52px);
 }
 
@@ -2396,6 +2596,47 @@ body {
   color: rgba(241, 246, 240, 0.62);
 }
 
+.readout-note {
+  max-width: 32ch;
+  margin-top: 24px;
+  color: rgba(241, 246, 240, 0.56);
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.route-preview {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.route-preview div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(241, 246, 240, 0.1);
+  background: rgba(241, 246, 240, 0.035);
+  padding: 13px 14px;
+}
+
+.route-preview span,
+.route-preview strong,
+.readout-actions span {
+  font-size: 0.64rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.route-preview span {
+  color: rgba(241, 246, 240, 0.42);
+}
+
+.route-preview strong {
+  color: rgba(240, 164, 91, 0.92);
+}
+
 .readout-grid {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -2403,6 +2644,21 @@ body {
   margin-top: 42px;
   border-top: 1px solid rgba(241, 246, 240, 0.12);
   padding-top: 24px;
+}
+
+.readout-actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 34px;
+}
+
+.readout-actions span {
+  border: 1px solid rgba(241, 246, 240, 0.12);
+  background: rgba(241, 246, 240, 0.04);
+  padding: 14px 10px;
+  color: rgba(241, 246, 240, 0.7);
+  text-align: center;
 }
 
 .readout-grid span,
@@ -4295,5 +4551,619 @@ body {
 
   .community-links {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Civilization render atlas */
+#civilizations {
+  width: min(100vw - 48px, 1880px);
+}
+
+#civilizations > .civilization-hero,
+#civilizations > .civilization-track {
+  grid-column: 1 / -1;
+}
+
+.civilization-hero {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.34fr) minmax(0, 1fr);
+  min-height: min(760px, calc(100vh - 118px));
+  margin-top: 26px;
+  overflow: hidden;
+  border: 1px solid rgba(241, 246, 240, 0.14);
+  background:
+    linear-gradient(rgba(241, 246, 240, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(241, 246, 240, 0.035) 1px, transparent 1px),
+    #03070d;
+  background-size: 96px 96px, 96px 96px, auto;
+}
+
+.civilization-hero-copy {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  align-content: center;
+  gap: 30px;
+  padding: clamp(34px, 4vw, 74px);
+  border-right: 1px solid rgba(241, 246, 240, 0.12);
+  background:
+    radial-gradient(circle at 100% 22%, var(--node-color, rgba(240, 164, 91, 0.22)), transparent 13rem),
+    linear-gradient(90deg, rgba(3, 7, 13, 0.98), rgba(3, 7, 13, 0.82) 72%, rgba(3, 7, 13, 0.28));
+}
+
+.civilization-hero-copy h2 {
+  max-width: 9ch;
+  margin: 0;
+  font-size: clamp(4.8rem, 7vw, 9.6rem);
+  font-weight: 900;
+  line-height: 0.88;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.civilization-readout {
+  display: grid;
+  gap: 16px;
+  max-width: 36rem;
+  padding-top: 28px;
+  border-top: 1px solid rgba(241, 246, 240, 0.14);
+}
+
+.civilization-readout span,
+.civilization-metrics span,
+.civilization-legend span,
+.civilization-card small {
+  color: var(--node-color, var(--gold));
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.civilization-readout strong {
+  color: rgba(241, 246, 240, 0.96);
+  font-size: clamp(1.65rem, 2vw, 2.4rem);
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.civilization-readout p {
+  max-width: 31rem;
+  min-height: calc(1.5em * 3);
+  margin: 0;
+  color: rgba(241, 246, 240, 0.68);
+  font-size: clamp(1rem, 1.05vw, 1.18rem);
+  line-height: 1.5;
+}
+
+.civilization-metrics {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 12px 20px;
+  max-width: 34rem;
+  padding-top: 26px;
+  border-top: 1px solid rgba(241, 246, 240, 0.14);
+}
+
+.civilization-metrics strong {
+  justify-self: end;
+  color: rgba(241, 246, 240, 0.82);
+  font-size: 0.86rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.civilization-hero-art {
+  position: relative;
+  min-height: 620px;
+  overflow: hidden;
+  background: #05090f;
+}
+
+.civilization-hero-art::before,
+.civilization-hero-art::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: "";
+  pointer-events: none;
+}
+
+.civilization-hero-art::before {
+  background:
+    linear-gradient(90deg, rgba(3, 7, 13, 0.22), transparent 28%, transparent 70%, rgba(3, 7, 13, 0.32)),
+    radial-gradient(circle at 24% 18%, var(--node-color, rgba(240, 164, 91, 0.18)), transparent 17rem);
+}
+
+.civilization-hero-art::after {
+  background:
+    linear-gradient(rgba(241, 246, 240, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(241, 246, 240, 0.035) 1px, transparent 1px);
+  background-size: 112px 112px;
+  mix-blend-mode: screen;
+  opacity: 0.52;
+}
+
+.civilization-hero-art img {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(0.98) contrast(1.04);
+}
+
+.civilization-legend {
+  position: absolute;
+  right: clamp(16px, 2vw, 34px);
+  bottom: clamp(16px, 2vw, 34px);
+  z-index: 3;
+  display: flex;
+  gap: 10px;
+}
+
+.civilization-legend span {
+  display: inline-grid;
+  min-height: 44px;
+  place-items: center;
+  border: 1px solid rgba(241, 246, 240, 0.18);
+  background: rgba(3, 7, 13, 0.72);
+  padding: 0 18px;
+  color: rgba(241, 246, 240, 0.74);
+}
+
+.civilization-track {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 1px;
+  overflow: visible;
+  background: rgba(241, 246, 240, 0.13);
+}
+
+.civilization-card {
+  position: relative;
+  display: grid;
+  grid-template-rows: minmax(210px, 0.58fr) minmax(210px, 0.42fr);
+  min-height: 430px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background: #05090f;
+  color: rgba(241, 246, 240, 0.94);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    outline-color 220ms ease;
+}
+
+.civilization-card:hover,
+.civilization-card.is-active {
+  z-index: 2;
+  outline: 2px solid var(--node-color, var(--gold));
+  outline-offset: -2px;
+  transform: translateY(-4px);
+}
+
+.civilization-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 210px;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.88;
+  filter: saturate(0.94) contrast(1.05);
+  transition:
+    opacity 220ms ease,
+    transform 420ms ease;
+}
+
+.civilization-card:hover img,
+.civilization-card.is-active img {
+  opacity: 1;
+  transform: scale(1.035);
+}
+
+.civilization-card > div:last-child {
+  position: relative;
+  inset: auto;
+  z-index: 2;
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  min-height: 210px;
+  padding: 22px clamp(18px, 1.7vw, 30px) 28px;
+  background:
+    radial-gradient(circle at 86% 0%, var(--node-color, rgba(240, 164, 91, 0.22)), transparent 8rem),
+    linear-gradient(180deg, rgba(5, 9, 15, 0.86), #05090f 42%);
+}
+
+.civilization-card span {
+  display: block;
+  min-height: calc(1.6em * 2);
+  color: var(--node-color, var(--gold));
+  font-size: 0.6rem;
+  font-weight: 900;
+  line-height: 1.6;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.civilization-card h3 {
+  margin: 0;
+  color: rgba(241, 246, 240, 0.96);
+  font-size: clamp(1.36rem, 1.45vw, 2.05rem);
+  font-weight: 900;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.civilization-card p {
+  display: -webkit-box;
+  max-width: 28ch;
+  margin: 0;
+  overflow: hidden;
+  color: rgba(241, 246, 240, 0.62);
+  font-size: 0.9rem;
+  line-height: 1.48;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+@media (max-width: 1280px) {
+  .civilization-hero {
+    grid-template-columns: minmax(300px, 0.42fr) minmax(0, 1fr);
+  }
+
+  .civilization-hero-copy h2 {
+    font-size: clamp(4rem, 7vw, 6.8rem);
+  }
+
+  .civilization-track {
+    grid-template-columns: repeat(5, minmax(250px, 1fr));
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+  }
+
+  .civilization-card {
+    scroll-snap-align: start;
+  }
+}
+
+@media (max-width: 860px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  .hero-section {
+    overflow: clip;
+    contain: paint;
+  }
+
+  .galaxy-background {
+    inset-inline: 0;
+  }
+
+  .hero-brand-scene {
+    inset-inline: 0;
+    width: 100%;
+  }
+
+  #civilizations {
+    width: min(100vw - 24px, 430px);
+    overflow: visible;
+  }
+
+  #civilizations > .civilization-hero,
+  #civilizations > .civilization-track {
+    width: 100%;
+    min-width: 0 !important;
+  }
+
+  .civilization-hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .civilization-hero-copy {
+    order: 2;
+    justify-items: center;
+    min-width: 0;
+    min-height: auto;
+    border-top: 1px solid rgba(241, 246, 240, 0.12);
+    border-right: 0;
+    padding: 32px 22px;
+    text-align: center;
+  }
+
+  .civilization-hero-copy h2 {
+    max-width: 11ch;
+    font-size: clamp(2.8rem, 13.5vw, 3.85rem);
+    line-height: 0.9;
+  }
+
+  .civilization-readout,
+  .civilization-metrics {
+    width: 100%;
+    max-width: 22rem;
+  }
+
+  .civilization-readout p {
+    min-height: 0;
+  }
+
+  .civilization-metrics strong {
+    max-width: 13ch;
+  }
+
+  .civilization-hero-art {
+    order: 1;
+    min-height: 330px;
+  }
+
+  .civilization-hero-art img {
+    min-height: 330px;
+  }
+
+  .civilization-legend {
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    justify-content: center;
+  }
+
+  .civilization-legend span {
+    min-height: 38px;
+    padding-inline: 10px;
+    font-size: 0.55rem;
+  }
+
+  .civilization-track {
+    grid-template-columns: 1fr;
+    min-width: 0 !important;
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+
+  .civilization-card {
+    grid-template-rows: 168px minmax(180px, auto);
+    min-width: 0 !important;
+    min-height: 350px;
+  }
+
+  .civilization-card:hover,
+  .civilization-card.is-active {
+    transform: none;
+  }
+
+  .civilization-card img {
+    height: 168px;
+    min-height: 168px;
+  }
+
+  .civilization-card > div:last-child {
+    min-height: 180px;
+    justify-items: center;
+    padding: 20px 22px 24px;
+    text-align: center;
+  }
+
+  .civilization-card span {
+    min-height: auto;
+  }
+
+  .civilization-card p {
+    max-width: 26rem;
+    -webkit-line-clamp: 2;
+  }
+}
+
+/* Definitive rendered civilization selector */
+#civilizations .civilization-system {
+  display: none !important;
+}
+
+#civilizations > .civ-render-hero,
+#civilizations > .civ-render-grid {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+.civ-render-hero {
+  display: grid !important;
+  grid-template-columns: minmax(360px, 0.32fr) minmax(0, 1fr) !important;
+  min-height: min(820px, calc(100vh - 92px));
+  margin-top: 26px;
+  overflow: hidden;
+  border: 1px solid rgba(241, 246, 240, 0.16);
+  background: #03070d;
+}
+
+.civ-render-copy {
+  display: grid;
+  align-content: center;
+  gap: 28px;
+  min-height: 100%;
+  padding: clamp(42px, 4.4vw, 86px);
+  background:
+    radial-gradient(circle at 100% 14%, var(--node-color, rgba(240, 164, 91, 0.2)), transparent 13rem),
+    linear-gradient(90deg, rgba(3, 7, 13, 0.98), rgba(3, 7, 13, 0.88) 72%, rgba(3, 7, 13, 0.26));
+}
+
+.civ-render-copy h2 {
+  max-width: 9.5ch;
+  margin: 0;
+  font-size: clamp(4.7rem, 7vw, 9.2rem);
+  font-weight: 900;
+  line-height: 0.88;
+  text-transform: uppercase;
+}
+
+.civ-render-art {
+  position: relative;
+  min-height: 680px;
+  overflow: hidden;
+  background: #02060d;
+}
+
+.civ-render-art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
+  object-position: center;
+  opacity: 1;
+}
+
+.civ-render-art::before {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(3, 7, 13, 0.08), transparent 28%, transparent 70%, rgba(3, 7, 13, 0.3)),
+    linear-gradient(rgba(241, 246, 240, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(241, 246, 240, 0.035) 1px, transparent 1px);
+  background-size: auto, 110px 110px, 110px 110px;
+  content: "";
+  pointer-events: none;
+}
+
+.civ-render-grid {
+  display: grid !important;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  gap: 1px !important;
+  margin-top: 1px !important;
+  overflow: visible !important;
+  padding: 0 !important;
+  background: rgba(241, 246, 240, 0.13);
+}
+
+.civ-render-card {
+  display: grid !important;
+  grid-template-rows: minmax(245px, 0.62fr) minmax(190px, 0.38fr) !important;
+  min-width: 0 !important;
+  min-height: 450px !important;
+  align-content: stretch !important;
+  border: 0 !important;
+  background: #05090f !important;
+  text-align: left;
+}
+
+.civ-render-card::before {
+  display: none !important;
+}
+
+.civ-render-card img {
+  display: block;
+  width: 100%;
+  height: 100% !important;
+  min-height: 245px !important;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.9;
+}
+
+.civ-render-card.is-active img,
+.civ-render-card:hover img {
+  opacity: 1;
+}
+
+.civ-render-card > div:last-child {
+  position: relative !important;
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  min-height: 190px;
+  padding: 24px clamp(18px, 1.7vw, 30px) 30px !important;
+  background:
+    radial-gradient(circle at 88% 0%, var(--node-color, rgba(240, 164, 91, 0.24)), transparent 8rem),
+    linear-gradient(180deg, rgba(5, 9, 15, 0.88), #05090f 52%) !important;
+}
+
+.civ-render-card h3 {
+  margin: 0;
+  font-size: clamp(1.35rem, 1.55vw, 2.1rem);
+  font-weight: 900;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1180px) {
+  .civ-render-hero {
+    grid-template-columns: 1fr !important;
+  }
+
+  .civ-render-art {
+    order: 1;
+    min-height: 520px;
+  }
+
+  .civ-render-copy {
+    order: 2;
+    min-height: auto;
+    text-align: center;
+    justify-items: center;
+  }
+
+  .civ-render-copy h2 {
+    max-width: 12ch;
+  }
+
+  .civ-render-grid {
+    grid-template-columns: repeat(5, minmax(240px, 1fr)) !important;
+    overflow-x: auto !important;
+  }
+}
+
+@media (max-width: 700px) {
+  #civilizations {
+    width: min(100vw - 24px, 430px);
+    overflow: visible !important;
+  }
+
+  .civ-render-hero {
+    width: 100%;
+    min-height: auto;
+  }
+
+  .civ-render-art {
+    min-height: 330px;
+  }
+
+  .civ-render-copy {
+    padding: 32px 22px;
+  }
+
+  .civ-render-copy h2 {
+    max-width: 11ch;
+    font-size: clamp(2.8rem, 13.5vw, 3.85rem);
+  }
+
+  .civ-render-grid {
+    grid-template-columns: 1fr !important;
+    overflow: visible !important;
+  }
+
+  .civ-render-card {
+    grid-template-rows: 180px minmax(178px, auto) !important;
+    min-height: 360px !important;
+  }
+
+  .civ-render-card img {
+    min-height: 180px !important;
+  }
+
+  .civ-render-card > div:last-child {
+    min-height: 178px;
+    justify-items: center;
+    text-align: center;
   }
 }

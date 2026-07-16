@@ -44,8 +44,8 @@ const mediaAssets: Partial<
     credit: "NOVERIS concept art",
   },
   "galaxy-background": {
-    src: "/media/retro/noveris-retro-orbit-map.png",
-    alt: "Retro minimal orbital map over a planetside horizon with multiple worlds and spacecraft.",
+    src: "/media/explore/noveris-galaxy-map.png",
+    alt: "Painterly NOVERIS galaxy map with glowing star systems, nebula bloom, planets, and faint route arcs.",
     credit: "NOVERIS concept art",
   },
   "hero-planet": {
@@ -210,7 +210,7 @@ function Header() {
   return (
     <header className="site-header">
       <a className="brand-mark" href="#top" aria-label="NOVERIS home">
-        <img src="/media/derived/noveris-wordmark-alpha.png" alt="NOVERIS" />
+        <img src="/media/derived/noveris-wordmark.svg" alt="NOVERIS" />
       </a>
       <nav aria-label="Primary navigation">
         {navItems.map((item) => (
@@ -612,7 +612,7 @@ function CommunitySection() {
       </div>
       <div className="footer-line">
         <a className="footer-logo" href="#top" aria-label="NOVERIS home">
-          <img src="/media/derived/noveris-wordmark-alpha.png" alt="NOVERIS" />
+          <img src="/media/derived/noveris-wordmark.svg" alt="NOVERIS" />
         </a>
         <p>
           An infinite universe of collecting, exploring, evolving, and growing civilizations.

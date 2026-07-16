@@ -352,9 +352,18 @@ function ExploreSection({
 }) {
   return (
     <Section id="explore" label="Explore">
-      <div className="explore-layout">
-        <div className="galaxy-stage">
+      <div className="explore-layout nms-galaxy-layout">
+        <div className="galaxy-stage nms-galaxy-stage">
           <MediaPlaceholder kind="galaxy-background" label="Galaxy Background" />
+          <div className="nms-starfield nms-starfield-one" aria-hidden="true" />
+          <div className="nms-starfield nms-starfield-two" aria-hidden="true" />
+          <div className="nms-aurora nms-aurora-one" aria-hidden="true" />
+          <div className="nms-aurora nms-aurora-two" aria-hidden="true" />
+          <div className="nms-void-bloom nms-void-bloom-one" aria-hidden="true" />
+          <div className="nms-void-bloom nms-void-bloom-two" aria-hidden="true" />
+          <div className="nms-hyperlane nms-hyperlane-one" aria-hidden="true" />
+          <div className="nms-hyperlane nms-hyperlane-two" aria-hidden="true" />
+          <div className="nms-hyperlane nms-hyperlane-three" aria-hidden="true" />
           <div className="galaxy-map-grid" aria-hidden="true" />
           <div className="galaxy-core" aria-hidden="true" />
           <div className="scan-ring scan-ring-one" aria-hidden="true" />
@@ -405,7 +414,7 @@ function ExploreSection({
           ))}
         </div>
         <motion.aside
-          className="planet-readout"
+          className="planet-readout nms-readout"
           key={activePlanet.name}
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}

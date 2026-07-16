@@ -5167,3 +5167,367 @@ body {
     text-align: center;
   }
 }
+
+/* No Man's Sky inspired galaxy map */
+#explore {
+  position: relative;
+  width: min(100vw - 48px, 1880px);
+  padding-top: clamp(34px, 4.2vw, 58px);
+  padding-bottom: clamp(46px, 5vw, 72px);
+}
+
+#explore > .section-kicker {
+  position: absolute;
+  top: clamp(62px, 7vw, 118px);
+  left: 0;
+  z-index: 6;
+}
+
+#explore > .nms-galaxy-layout {
+  grid-column: 1 / -1;
+}
+
+.nms-galaxy-layout {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.31fr) !important;
+  gap: 1px !important;
+  min-height: min(880px, calc(100vh - 92px));
+  margin-top: 0;
+  overflow: hidden;
+  border: 1px solid rgba(241, 246, 240, 0.16);
+  background: rgba(241, 246, 240, 0.13);
+}
+
+.nms-galaxy-stage {
+  position: relative;
+  min-height: min(880px, calc(100vh - 92px)) !important;
+  overflow: hidden;
+  border: 0 !important;
+  background:
+    radial-gradient(circle at 52% 48%, rgba(255, 212, 114, 0.52), transparent 7.5rem),
+    radial-gradient(circle at 58% 43%, rgba(56, 211, 255, 0.38), transparent 18rem),
+    radial-gradient(circle at 24% 36%, rgba(255, 88, 196, 0.26), transparent 20rem),
+    radial-gradient(circle at 84% 28%, rgba(112, 90, 255, 0.32), transparent 18rem),
+    radial-gradient(circle at 12% 72%, rgba(22, 198, 206, 0.26), transparent 18rem),
+    radial-gradient(ellipse at 50% 54%, rgba(81, 229, 255, 0.15), transparent 35rem),
+    #01040b !important;
+  isolation: isolate;
+}
+
+.nms-galaxy-stage .media-placeholder.galaxy-background {
+  opacity: 0.28;
+  filter: saturate(1.45) contrast(1.16) blur(0.4px);
+  mix-blend-mode: screen;
+}
+
+.nms-galaxy-stage .media-placeholder.galaxy-background::before,
+.nms-galaxy-stage .media-placeholder.galaxy-background::after,
+.nms-galaxy-stage .media-label {
+  display: none !important;
+}
+
+.nms-galaxy-stage::before,
+.nms-galaxy-stage::after {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  content: "";
+  pointer-events: none;
+}
+
+.nms-galaxy-stage::before {
+  background:
+    radial-gradient(circle at 50% 50%, transparent 0 28%, rgba(1, 4, 11, 0.18) 58%, rgba(1, 4, 11, 0.78) 100%),
+    linear-gradient(rgba(241, 246, 240, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(241, 246, 240, 0.035) 1px, transparent 1px);
+  background-size: auto, 92px 92px, 92px 92px;
+}
+
+.nms-galaxy-stage::after {
+  background:
+    linear-gradient(120deg, transparent 0 28%, rgba(82, 235, 255, 0.08) 35%, rgba(255, 143, 232, 0.09) 49%, rgba(255, 185, 80, 0.08) 63%, transparent 74%),
+    radial-gradient(circle at 50% 49%, rgba(255, 221, 135, 0.38), transparent 10rem),
+    repeating-radial-gradient(circle at 50% 50%, transparent 0 7.5rem, rgba(139, 237, 255, 0.08) 7.6rem 7.72rem, transparent 7.86rem 12rem);
+  mix-blend-mode: screen;
+  opacity: 0.92;
+}
+
+.nms-starfield {
+  position: absolute;
+  inset: -8%;
+  z-index: 1;
+  background:
+    radial-gradient(circle at 8% 12%, rgba(255,255,255,0.9) 0 1px, transparent 1.8px),
+    radial-gradient(circle at 17% 42%, rgba(141,236,255,0.8) 0 1.4px, transparent 2.2px),
+    radial-gradient(circle at 26% 68%, rgba(255,184,89,0.75) 0 1.2px, transparent 2px),
+    radial-gradient(circle at 37% 18%, rgba(255,255,255,0.65) 0 1px, transparent 1.8px),
+    radial-gradient(circle at 48% 78%, rgba(120,218,255,0.75) 0 1.4px, transparent 2.2px),
+    radial-gradient(circle at 58% 28%, rgba(255,255,255,0.72) 0 1px, transparent 1.8px),
+    radial-gradient(circle at 69% 63%, rgba(255,190,95,0.8) 0 1.2px, transparent 2px),
+    radial-gradient(circle at 82% 16%, rgba(174,160,255,0.82) 0 1.4px, transparent 2.4px),
+    radial-gradient(circle at 91% 82%, rgba(255,255,255,0.7) 0 1px, transparent 1.8px);
+  background-size: 330px 260px;
+  opacity: 0.95;
+}
+
+.nms-starfield-two {
+  inset: -12%;
+  transform: rotate(-8deg) scale(1.2);
+  background-size: 460px 390px;
+  filter: blur(0.4px);
+  opacity: 0.72;
+}
+
+.nms-aurora {
+  position: absolute;
+  z-index: 2;
+  width: 78%;
+  height: 32%;
+  border-radius: 999px;
+  filter: blur(28px);
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.nms-aurora-one {
+  top: 19%;
+  left: 7%;
+  background: linear-gradient(90deg, transparent, rgba(28, 216, 224, 0.06), rgba(83, 243, 181, 0.28), rgba(167, 121, 255, 0.26), transparent);
+  transform: rotate(-10deg);
+}
+
+.nms-aurora-two {
+  right: -14%;
+  bottom: 19%;
+  background: linear-gradient(90deg, transparent, rgba(255, 166, 77, 0.22), rgba(255, 88, 196, 0.22), rgba(76, 206, 255, 0.16), transparent);
+  transform: rotate(14deg);
+}
+
+.nms-void-bloom {
+  position: absolute;
+  z-index: 3;
+  width: 38%;
+  aspect-ratio: 1;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(255, 215, 123, 0.44), rgba(68, 216, 255, 0.2) 28%, transparent 65%);
+  filter: blur(18px);
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.nms-void-bloom-one {
+  top: 29%;
+  left: 33%;
+}
+
+.nms-void-bloom-two {
+  right: 3%;
+  top: 14%;
+  width: 24%;
+  background: radial-gradient(circle, rgba(151, 126, 255, 0.34), rgba(47, 220, 255, 0.15) 32%, transparent 68%);
+}
+
+.nms-hyperlane {
+  position: absolute;
+  z-index: 4;
+  left: 6%;
+  width: 92%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(115, 236, 255, 0.18), rgba(255, 189, 89, 0.82), rgba(255,255,255,0.72), transparent);
+  box-shadow:
+    0 0 16px rgba(99, 226, 255, 0.52),
+    0 0 34px rgba(255, 168, 70, 0.34);
+  opacity: 0.82;
+  transform-origin: left center;
+  pointer-events: none;
+}
+
+.nms-hyperlane-one {
+  top: 37%;
+  transform: rotate(-13deg);
+}
+
+.nms-hyperlane-two {
+  top: 58%;
+  left: 14%;
+  width: 72%;
+  transform: rotate(18deg);
+}
+
+.nms-hyperlane-three {
+  top: 48%;
+  left: 27%;
+  width: 50%;
+  background: linear-gradient(90deg, transparent, rgba(255, 124, 220, 0.3), rgba(145, 230, 255, 0.78), transparent);
+  transform: rotate(4deg);
+}
+
+.nms-galaxy-stage .galaxy-map-grid {
+  z-index: 5;
+  opacity: 0.28;
+}
+
+.nms-galaxy-stage .galaxy-core {
+  z-index: 6;
+  width: 132px;
+  background:
+    radial-gradient(circle, rgba(255, 246, 188, 0.96) 0 7%, rgba(255, 177, 68, 0.7) 8% 22%, rgba(77, 219, 255, 0.24) 23% 52%, transparent 70%);
+  box-shadow:
+    0 0 34px rgba(255, 214, 98, 0.72),
+    0 0 110px rgba(45, 216, 255, 0.42),
+    0 0 180px rgba(183, 111, 255, 0.24);
+}
+
+.nms-galaxy-stage .scan-ring {
+  z-index: 6;
+  border-color: rgba(160, 240, 255, 0.16);
+  box-shadow: 0 0 24px rgba(79, 218, 255, 0.12);
+}
+
+.nms-galaxy-stage .map-route,
+.nms-galaxy-stage .route-lane {
+  z-index: 7;
+  opacity: 0.95;
+  filter: drop-shadow(0 0 10px rgba(115, 236, 255, 0.55));
+}
+
+.nms-galaxy-stage .map-console,
+.nms-galaxy-stage .sector-label {
+  z-index: 9;
+  background: rgba(2, 6, 13, 0.48);
+  border-color: rgba(143, 233, 255, 0.2);
+  backdrop-filter: blur(14px);
+}
+
+.nms-galaxy-stage .map-range {
+  z-index: 8;
+  color: rgba(226, 249, 255, 0.56);
+}
+
+.nms-galaxy-stage .map-node {
+  z-index: 8;
+  background: rgba(151, 234, 255, 0.72);
+  box-shadow:
+    0 0 16px rgba(99, 226, 255, 0.62),
+    0 0 38px rgba(166, 116, 255, 0.22);
+}
+
+.nms-galaxy-stage .planet-pin {
+  z-index: 10;
+}
+
+.nms-galaxy-stage .planet-pin span {
+  width: 32px;
+  height: 32px;
+  border-color: rgba(255, 236, 172, 0.78);
+  background:
+    radial-gradient(circle at 34% 30%, #fffbe8 0 12%, #ffc250 24%, #e27a12 58%, #401800 100%);
+  box-shadow:
+    0 0 16px rgba(255, 214, 106, 0.9),
+    0 0 44px rgba(255, 143, 42, 0.62),
+    0 0 82px rgba(88, 218, 255, 0.24);
+}
+
+.nms-galaxy-stage .planet-pin.is-active span,
+.nms-galaxy-stage .planet-pin:hover span {
+  transform: scale(1.55);
+  box-shadow:
+    0 0 22px rgba(255, 238, 178, 1),
+    0 0 76px rgba(255, 166, 54, 0.82),
+    0 0 140px rgba(88, 218, 255, 0.44);
+}
+
+.nms-readout {
+  min-height: min(880px, calc(100vh - 92px)) !important;
+  justify-content: center !important;
+  border: 0 !important;
+  background:
+    radial-gradient(circle at 0% 12%, rgba(255, 168, 70, 0.13), transparent 16rem),
+    radial-gradient(circle at 100% 78%, rgba(80, 218, 255, 0.12), transparent 18rem),
+    linear-gradient(90deg, rgba(3, 7, 13, 0.88), rgba(3, 7, 13, 0.98)) !important;
+  backdrop-filter: blur(26px);
+}
+
+.nms-readout h3 {
+  font-size: clamp(3.6rem, 5.5vw, 6.8rem);
+}
+
+.nms-readout .readout-note {
+  max-width: 29rem;
+  color: rgba(241, 246, 240, 0.72);
+  font-size: clamp(1.18rem, 1.35vw, 1.55rem);
+  line-height: 1.45;
+}
+
+.nms-readout .route-preview div,
+.nms-readout .readout-actions span {
+  background: rgba(9, 15, 22, 0.58);
+  border-color: rgba(143, 233, 255, 0.16);
+}
+
+@media (max-width: 1100px) {
+  .nms-galaxy-layout {
+    grid-template-columns: 1fr !important;
+  }
+
+  .nms-galaxy-stage {
+    min-height: 640px !important;
+  }
+
+  .nms-readout {
+    min-height: auto !important;
+    padding: 38px 28px !important;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 700px) {
+  #explore {
+    width: min(100vw - 24px, 430px);
+  }
+
+  .nms-galaxy-layout {
+    min-height: auto;
+  }
+
+  .nms-galaxy-stage {
+    min-height: 500px !important;
+  }
+
+  .nms-aurora {
+    width: 115%;
+    height: 26%;
+    filter: blur(22px);
+  }
+
+  .nms-galaxy-stage .galaxy-core {
+    width: 96px;
+  }
+
+  .nms-galaxy-stage .map-console-top,
+  .nms-galaxy-stage .map-console-bottom {
+    display: none;
+  }
+
+  .nms-galaxy-stage .planet-pin {
+    min-width: 82px;
+  }
+
+  .nms-galaxy-stage .planet-pin span {
+    width: 26px;
+    height: 26px;
+  }
+
+  .nms-galaxy-stage .planet-pin strong {
+    font-size: 0.55rem;
+  }
+
+  .nms-readout {
+    padding: 34px 22px !important;
+  }
+
+  .nms-readout h3 {
+    font-size: 3.35rem;
+  }
+}

@@ -4052,6 +4052,12 @@ body {
     padding: 26px;
   }
 
+  #build .build-copy h2 {
+    max-width: 12ch;
+    font-size: clamp(2.35rem, 11.4vw, 3rem);
+    line-height: 0.94;
+  }
+
   .community-section {
     padding-inline: 14px;
   }
@@ -4548,6 +4554,10 @@ body {
   .discover-copy h2,
   .community-copy h2 {
     font-size: 2.85rem;
+  }
+
+  #build .build-copy h2 {
+    font-size: clamp(2.2rem, 10.6vw, 2.7rem);
   }
 
   .planet-readout h3 {

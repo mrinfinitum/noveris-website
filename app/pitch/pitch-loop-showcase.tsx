@@ -15,14 +15,17 @@ export function PitchLoopShowcase() {
   return (
     <section className="pitch-loop" aria-labelledby="pitch-loop">
       <div className="pitch-loop-art-wrap">
-        <img
-          src={activePillar.image}
-          alt=""
-          aria-hidden="true"
-          className="pitch-loop-art"
-          loading="lazy"
-          decoding="async"
-        />
+        {buildPillars.map((pillar, index) => (
+          <img
+            src={pillar.image}
+            alt=""
+            aria-hidden="true"
+            className={`pitch-loop-art ${activePillar.title === pillar.title ? "is-active" : ""}`}
+            key={pillar.title}
+            loading={index === 0 ? "eager" : "lazy"}
+            decoding="async"
+          />
+        ))}
         {activePillar.callouts.map((callout, index) => (
           <span
             className={`pitch-loop-callout ${calloutPositions[index]}`}
@@ -44,7 +47,11 @@ export function PitchLoopShowcase() {
               role="tab"
               aria-selected={activePillar.title === pillar.title}
               onClick={() => setActivePillar(pillar)}
-              onMouseEnter={() => setActivePillar(pillar)}
+              onMouseEnter={() => {
+                if (activePillar.title !== pillar.title) {
+                  setActivePillar(pillar);
+                }
+              }}
             >
               <small>{String(index + 1).padStart(2, "0")}</small>
               {pillar.title}

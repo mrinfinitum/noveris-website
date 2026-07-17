@@ -1,0 +1,109 @@
+{
+  "title": "NOVERIS Landscape Concept Art Pack 20 Vol. 2",
+  "version": "1.0",
+  "count": 20,
+  "aspectRatio": "16:9",
+  "styleGuide": "NOVERIS space scenes: retro-futurist sci-fi concept art, dark cinematic atmosphere, blue-black space, warm amber civilization light, subtle orbital diagrams, painterly premium game key-art finish, minimal editorial composition.",
+  "prompts": [
+    {
+      "id": "landscape-01-eclipse-caravan",
+      "title": "Eclipse Caravan",
+      "prompt": "A caravan of small colony ships crossing the shadow of a total solar eclipse above a blue-black planet, amber engine trails, faint orbital route arcs, luminous corona behind the planet, premium retro-futurist NOVERIS concept art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-02-supernova-observatory",
+      "title": "Supernova Observatory",
+      "prompt": "A remote observatory station watching a blue supernova bloom behind dust clouds, mirrored telescope arrays, amber habitat lights, tiny ships docked in silhouette, dark cinematic NOVERIS sci-fi concept art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-03-methane-lake-colony",
+      "title": "Methane Lake Colony",
+      "prompt": "A colony on the shore of a glassy methane lake under a huge ringed moon, black cliffs, amber domes reflected in dark liquid, pale cyan atmospheric haze, subtle orbit lines, painterly NOVERIS key art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-04-orbital-shipyard-dawn",
+      "title": "Orbital Shipyard Dawn",
+      "prompt": "A vast orbital shipyard at dawn assembling a sleek ark vessel above a planet, construction cranes and drydock rings, warm amber work lights, blue atmosphere glow, tiny worker craft, premium NOVERIS space concept art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-05-canyon-rail-habitat",
+      "title": "Canyon Rail Habitat",
+      "prompt": "A futuristic rail habitat spanning an alien canyon, glass stations embedded in cliffs, amber windows, blue river far below, orbital ships as faint streaks overhead, retro-futurist NOVERIS landscape concept art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-06-glowing-savanna",
+      "title": "Glowing Savanna",
+      "prompt": "A wide alien savanna at night with luminous grass fields and umbrella trees, distant colony towers glowing amber, two moons and faint atlas arcs above, quiet exploratory NOVERIS concept art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-07-dark-matter-lighthouse",
+      "title": "Dark Matter Lighthouse",
+      "prompt": "A lonely dark matter lighthouse station floating at the edge of a black nebula, a vertical blue-white beam cutting through space, amber windows, route beacons receding into darkness, elegant NOVERIS retro-futurist space art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-08-terraformer-pyramid",
+      "title": "Terraformer Pyramid",
+      "prompt": "An abandoned terraformer pyramid half-buried in red-black desert, ancient machinery glowing amber through cracks, cyan atmospheric processors in the distance, huge planet arc in the sky, painterly NOVERIS sci-fi key art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-09-comet-harvest-swarm",
+      "title": "Comet Harvest Swarm",
+      "prompt": "A swarm of autonomous harvest drones surrounding a bright comet, ice crystals sparkling, amber mining beams, blue-black starfield and subtle orbital diagrams, dynamic NOVERIS concept art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-10-cloud-city-ice-giant",
+      "title": "Cloud City Over an Ice Giant",
+      "prompt": "A suspended cloud city floating above the turquoise storms of an ice giant, long tether towers disappearing into clouds, amber windows and ship traffic, teal lightning far below, cinematic NOVERIS space landscape, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-11-quantum-garden-vault",
+      "title": "Quantum Garden Vault",
+      "prompt": "A sealed orbital vault opened to reveal a impossible quantum garden inside, glowing cyan plants, amber archive lights, black metal shell panels, planet and stars beyond, mysterious premium NOVERIS concept art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-12-basalt-mirror-lakes",
+      "title": "Basalt Mirror Lakes",
+      "prompt": "A basalt alien world with mirror-like lakes reflecting a giant planet and passing ships, small amber research outposts along the shore, blue dusk atmosphere, faint scan rings, serene NOVERIS landscape art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-13-frozen-ring-port",
+      "title": "Frozen Ring Port",
+      "prompt": "A frozen port built into the rings of a small icy moon, cargo ships docking along crystalline piers, amber bay lights, enormous ring shadows crossing the horizon, retro-futurist NOVERIS sci-fi key art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-14-magnetic-storm-station",
+      "title": "Magnetic Storm Station",
+      "prompt": "A research station suspended inside a magnetic storm, ribbon auroras twisting around antenna towers, amber hab modules, tiny ships braving blue electric haze, dramatic NOVERIS concept art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-15-two-sun-canopy-city",
+      "title": "Two-Sun Canopy City",
+      "prompt": "A city under a vast transparent canopy on an alien plain with two suns setting, warm amber interior lights, surrounding dark mountains, faint ship trails and orbital arcs, premium NOVERIS civilization landscape, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-16-star-whale-migration",
+      "title": "Star Whale Migration",
+      "prompt": "Enormous translucent star-whale organisms migrating through a blue nebula alongside tiny explorer ships, bioluminescent cyan bodies, amber navigation beacons, cosmic scale, painterly NOVERIS sci-fi concept art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-17-void-refinery",
+      "title": "Void Refinery",
+      "prompt": "A refinery station at a Lagrange point between two planets, black industrial rings, amber plasma pipelines, blue atmospheric glows on both worlds, faint atlas route geometry, premium dark NOVERIS space concept art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-18-aurora-canyon-bridge",
+      "title": "Aurora Canyon Bridge",
+      "prompt": "A colossal bridge crossing an ice canyon beneath curtains of teal aurora, rover lights moving across the span, amber waystations, distant colony domes and moons, cinematic NOVERIS alien landscape, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-19-stargate-ruins",
+      "title": "Stargate Ruins",
+      "prompt": "Ancient stargate ruins on a windswept moon plain, broken circular arches glowing faint amber, explorers and small ships for scale, blue-black sky with orbital lines and distant planet, mysterious NOVERIS concept art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-20-galaxy-bloom-map",
+      "title": "Galaxy Bloom Map",
+      "prompt": "A stylized atlas-like galaxy bloom viewed from deep space, countless blue and amber star systems connected by faint route lines, soft aurora clouds, elegant negative space, premium NOVERIS galaxy map concept art, wide 16:9, no text, no logo, no watermark."
+    }
+  ]
+}

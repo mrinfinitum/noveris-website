@@ -1,0 +1,109 @@
+{
+  "title": "NOVERIS Landscape Concept Art Pack 20",
+  "version": "1.0",
+  "count": 20,
+  "aspectRatio": "16:9",
+  "styleGuide": "NOVERIS space scenes: retro-futurist sci-fi concept art, dark cinematic atmosphere, blue-black space, warm amber civilization light, subtle orbital diagrams, painterly premium game key-art finish, minimal editorial composition.",
+  "prompts": [
+    {
+      "id": "landscape-01-aurora-gate",
+      "title": "Aurora Gate",
+      "prompt": "A colossal orbital gate suspended above an ice planet, ribbons of teal aurora wrapping through the gate structure, amber docking lights, tiny ships entering the aperture, faint orbital diagram lines, premium retro-futurist NOVERIS space concept art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-02-rogue-planet-camps",
+      "title": "Rogue Planet Camps",
+      "prompt": "A rogue planet drifting through deep black space with mobile research camps clustered around warm amber geothermal vents, blue rim light from distant stars, snow-dark terrain and tiny crawler lights, cinematic NOVERIS sci-fi concept art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-03-archive-moon",
+      "title": "Archive Moon",
+      "prompt": "A moon-sized alien archive with carved black monolith shelves visible through a cracked crust, golden data light glowing inside, explorer ships skimming the surface, subtle atlas orbit lines, dark retro-futurist NOVERIS key art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-04-living-reef-orbit",
+      "title": "Living Reef Orbit",
+      "prompt": "A living coral-like orbital reef growing around a small blue planet, translucent cyan tendrils and amber habitat nodes, tiny ships threading between organic arches, serene dark space backdrop, painterly NOVERIS concept art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-05-derelict-fleet",
+      "title": "Derelict Fleet",
+      "prompt": "A silent graveyard of enormous derelict colony ships drifting near a dim nebula, amber salvage lights on a few hulls, faint route beacons and sensor rings, deep black negative space, premium NOVERIS retro-futurist concept art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-06-dawn-colony-ridge",
+      "title": "Dawn Colony Ridge",
+      "prompt": "A first colony perched along a volcanic ridge at dawn, black basalt cliffs, glass domes glowing amber, a huge crescent planet in the sky, ships tracing pale blue paths overhead, quiet cinematic NOVERIS sci-fi landscape, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-07-gravity-harvesters",
+      "title": "Gravity Harvesters",
+      "prompt": "Massive gravity harvester towers floating above a gas giant storm, teal lightning within clouds, amber industrial rings suspended in atmosphere, tiny maintenance craft for scale, elegant orbital geometry, NOVERIS premium concept art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-08-asteroid-city",
+      "title": "Asteroid City",
+      "prompt": "A hollowed asteroid city with warm interior windows and glass terraces, mining elevators and ship lanes connecting nearby rocks, blue-black starfield and faint orbital grid lines, dark painterly NOVERIS game key art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-09-cradle-world",
+      "title": "Cradle World",
+      "prompt": "A lush alien cradle world seen from a high cliff, glowing blue rivers, amber settlement lights in distant valleys, immense ringed planet rising beyond the horizon, subtle scan arcs in sky, retro-futurist NOVERIS concept art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-10-wormhole-survey",
+      "title": "Wormhole Survey",
+      "prompt": "A survey fleet arranged around a luminous wormhole, teal and violet lensing light, amber route beacons forming a cautious path, deep black space and faint atlas markings, elegant cinematic NOVERIS sci-fi concept art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-11-night-side-megacity",
+      "title": "Night-Side Megacity",
+      "prompt": "A planet night side covered by a sprawling megacity network, amber city veins across continents, orbital stations and ship trails above, blue atmospheric edge glow, minimal dark NOVERIS premium key art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-12-terraforming-mirrors",
+      "title": "Terraforming Mirrors",
+      "prompt": "Gigantic terraforming mirrors angled above a barren planet, warm sunlight beams carving life zones into dark terrain, early colony domes glowing amber, faint construction arcs, painterly retro-futurist NOVERIS concept art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-13-subglacial-ocean",
+      "title": "Subglacial Ocean",
+      "prompt": "A cutaway-like alien ice canyon revealing a glowing subglacial ocean below, research platforms along the ice walls, cyan bioluminescence and amber base lights, moons overhead, cinematic NOVERIS science-fantasy landscape, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-14-stellar-nursery",
+      "title": "Stellar Nursery",
+      "prompt": "A fleet of seed ships crossing a stellar nursery filled with newborn blue stars and amber dust lanes, delicate orbital route curves, vast negative space, premium dark retro-futurist NOVERIS concept art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-15-ancient-ringworld",
+      "title": "Ancient Ringworld",
+      "prompt": "An ancient broken ringworld curving across space, ruined city silhouettes along its inner surface, amber relic lights and teal atmosphere pockets, tiny ships tracing the scale, painterly NOVERIS sci-fi key art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-16-desert-skyport",
+      "title": "Desert Skyport",
+      "prompt": "A desert planet skyport at blue hour, sleek spacecraft lifting from amber-lit platforms, wind-carved dunes, distant moons and faint orbit lines, minimal cinematic retro-futurist NOVERIS concept art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-17-quantum-obelisk",
+      "title": "Quantum Obelisk",
+      "prompt": "A black quantum obelisk standing in an alien crater, levitating fragments and blue-white energy rings, small explorers and rovers with amber lights, huge starfield overhead, mysterious premium NOVERIS concept art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-18-migrating-arks",
+      "title": "Migrating Arks",
+      "prompt": "Multiple city-sized ark ships migrating between two planets, warm window grids, long amber engine trails, teal nebula haze and subtle route diagrams, grand cinematic NOVERIS sci-fi key art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-19-atlas-beacon-field",
+      "title": "Atlas Beacon Field",
+      "prompt": "A field of ancient atlas beacons arranged across an asteroid plain, each casting amber light pillars into deep blue space, faint orbit circles and distant ships, elegant mysterious NOVERIS retro-futurist concept art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-20-civilization-horizon",
+      "title": "Civilization Horizon",
+      "prompt": "A panoramic view from orbit where one planet shows multiple civilization biomes along the terminator: industrial lights, ecological green glow, cybernetic blue grids, scientific observatories, corporate trade ports, unified by subtle atlas route lines, premium NOVERIS concept art, wide 16:9, no text, no logo, no watermark."
+    }
+  ]
+}

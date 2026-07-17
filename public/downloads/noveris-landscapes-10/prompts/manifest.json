@@ -1,0 +1,59 @@
+{
+  "title": "NOVERIS New Landscape Concept Art Pack",
+  "version": "2.0",
+  "count": 10,
+  "aspectRatio": "16:9",
+  "styleGuide": "New NOVERIS space scenes: retro-futurist sci-fi concept art, dark cinematic atmosphere, blue-black space, warm amber civilization light, subtle orbital diagrams, painterly premium game key-art finish, minimal editorial composition.",
+  "prompts": [
+    {
+      "id": "landscape-01-orbital-elevator",
+      "title": "Orbital Elevator Over the Terminator",
+      "prompt": "A colossal orbital elevator rising from the night side of an alien planet into a ring of cargo stations, planet curve below, amber city lights tracing continents, blue atmospheric rim glow, tiny ships moving along the tether, faint orbital diagram lines, retro-futurist NOVERIS sci-fi concept art, painterly premium game key art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-02-biome-cathedral",
+      "title": "Bioluminescent Biome Cathedral",
+      "prompt": "A vast alien biosphere cathedral grown from luminous fungal trees and glass habitat arches, cyan bioluminescent canopy, amber colony lights woven through living roots, distant moons and orbit lines overhead, dark cinematic retro-futurist NOVERIS concept art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-03-ring-miners",
+      "title": "Ring Miner Convoy",
+      "prompt": "A convoy of mining ships cutting through the icy rings of a giant planet, glittering debris fields, amber engine trails, faint blue sensor arcs, a distant refinery silhouette suspended among ring shadows, retro-futurist sci-fi key art, painterly dark space atmosphere, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-04-ancient-machine-moon",
+      "title": "Ancient Machine Moon",
+      "prompt": "An ancient alien machine moon partially split open, revealing a glowing amber inner core and enormous mechanical rings, small explorer ships for scale, blue-black starfield, faint atlas-line overlays, mysterious premium retro-futurist NOVERIS concept art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-05-nebula-ark",
+      "title": "Ark Ship in the Nebula",
+      "prompt": "A monumental ark ship drifting through a teal and violet nebula, warm windows like a moving city, small escort ships, long soft light trails, subtle orbital geometry in the dust, elegant dark retro-futurist NOVERIS sci-fi concept art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-06-crystal-storm",
+      "title": "Crystal Storm World",
+      "prompt": "A stormy alien landscape of enormous translucent crystals under a dark blue sky, amber lightning inside the crystals, research skimmers hovering between spires, distant planet arc, faint scan rings, cinematic retro-futurist NOVERIS concept art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-07-ocean-leviathan-scan",
+      "title": "Ocean Leviathan Scan",
+      "prompt": "A night ocean on an alien world with a massive bioluminescent leviathan shape beneath the water, tiny research boats and hovering probes casting amber light, moons overhead, faint orbit and sonar rings in the sky and water, dark premium NOVERIS concept art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-08-solar-forge",
+      "title": "Solar Forge",
+      "prompt": "A solar forge megastructure orbiting close to a star, golden plasma streams feeding ring foundries, tiny ships crossing blue-black shadows, elegant orbital geometry, dramatic amber and cyan lighting, retro-futurist NOVERIS sci-fi concept art, painterly premium key art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-09-lost-garden-orbit",
+      "title": "Lost Garden in Orbit",
+      "prompt": "A broken orbital habitat overgrown into a floating alien garden, trees and bioluminescent plants spilling through shattered station rings, amber habitation lights still glowing, blue planet below, quiet mysterious retro-futurist NOVERIS concept art, wide 16:9, no text, no logo, no watermark."
+    },
+    {
+      "id": "landscape-10-black-hole-route",
+      "title": "Black Hole Route",
+      "prompt": "A dangerous trade route curving around a distant black hole, lensing stars and blue nebula light, amber route beacons and tiny ships following faint orbital paths, deep black negative space, premium retro-futurist NOVERIS atlas concept art, wide 16:9, no text, no logo, no watermark."
+    }
+  ]
+}

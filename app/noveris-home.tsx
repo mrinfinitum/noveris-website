@@ -14,6 +14,7 @@ import {
   explorePlanets,
   heroActions,
   navItems,
+  progressionEras,
   structuredData,
   visionLines,
 } from "./noveris-content";
@@ -92,6 +93,7 @@ export function NoverisHome() {
   const [activeCivilization, setActiveCivilization] = useState(civilizations[0]);
   const [activeDiscovery, setActiveDiscovery] = useState(discoveries[0]);
   const [activeBuildPillar, setActiveBuildPillar] = useState(buildPillars[0]);
+  const [activeEra, setActiveEra] = useState(progressionEras[0]);
   const [isMobileHero, setIsMobileHero] = useState(false);
 
   useEffect(() => {
@@ -214,6 +216,7 @@ export function NoverisHome() {
       </section>
 
       <VisionSection />
+      <ProgressionSection activeEra={activeEra} setActiveEra={setActiveEra} />
       <CivilizationsSection
         activeCivilization={activeCivilization}
         setActiveCivilization={setActiveCivilization}
@@ -281,6 +284,59 @@ function VisionSection() {
             ),
           )}
         </motion.div>
+      </div>
+    </Section>
+  );
+}
+
+function ProgressionSection({
+  activeEra,
+  setActiveEra,
+}: {
+  activeEra: (typeof progressionEras)[number];
+  setActiveEra: (era: (typeof progressionEras)[number]) => void;
+}) {
+  return (
+    <Section id="eras" label="Eras">
+      <div className="progression-panel">
+        <div className="progression-art" aria-hidden="true">
+          <img
+            src="/media/progression/survival-to-space.png"
+            alt=""
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div className="progression-copy">
+          <span className="atlas-eyebrow">Survival to space</span>
+          <h2>Grow through every age.</h2>
+          <p>
+            Start with a fire, then push civilization through history until the
+            horizon becomes orbital.
+          </p>
+        </div>
+        <div className="progression-readout" aria-live="polite">
+          <span>{activeEra.period}</span>
+          <strong>{activeEra.name}</strong>
+          <p>{activeEra.detail}</p>
+        </div>
+        <div className="progression-rail" role="tablist" aria-label="Civilization eras">
+          {progressionEras.map((era, index) => (
+            <button
+              type="button"
+              className={activeEra.name === era.name ? "is-active" : ""}
+              key={era.name}
+              role="tab"
+              aria-selected={activeEra.name === era.name}
+              onClick={() => setActiveEra(era)}
+              onMouseEnter={() => setActiveEra(era)}
+            >
+              <small>{String(index + 1).padStart(2, "0")}</small>
+              <strong>{era.name}</strong>
+              <span>{era.thesis}</span>
+            </button>
+          ))}
+        </div>
       </div>
     </Section>
   );

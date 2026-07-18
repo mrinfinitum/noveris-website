@@ -1,4 +1,4 @@
-export const navItems = ["Vision", "Civilizations", "Explore", "Build", "Discover"];
+export const navItems = ["Vision", "Eras", "Civilizations", "Explore", "Build", "Discover"];
 
 export const heroActions = [
   { label: "Wishlist", href: "#community", intent: "primary" },
@@ -11,6 +11,45 @@ export const visionLines = [
   "Collect resources.",
   "Explore living galaxies.",
   "Keep growing.",
+];
+
+export const progressionEras = [
+  {
+    name: "Survival",
+    period: "First Spark",
+    thesis: "Learn the world by hand.",
+    detail: "Gather, hunt, shelter, and turn the first fragile camp into a repeatable growth loop.",
+  },
+  {
+    name: "Kingdoms",
+    period: "Ancient + Medieval",
+    thesis: "Organize people into power.",
+    detail: "Villages become roads, walls, laws, workshops, and the first durable civilization engines.",
+  },
+  {
+    name: "Awakening",
+    period: "Renaissance",
+    thesis: "Observe, measure, imagine.",
+    detail: "Astronomy, navigation, engineering, and culture unlock the idea that the map can expand.",
+  },
+  {
+    name: "Industry",
+    period: "Industrial Age",
+    thesis: "Convert resources into scale.",
+    detail: "Steam, factories, rail, electricity, and automation turn local production into planetary momentum.",
+  },
+  {
+    name: "Modernity",
+    period: "Modern Future",
+    thesis: "Connect everything.",
+    detail: "Cities, networks, AI, orbital launch systems, and climate repair push civilization past one world.",
+  },
+  {
+    name: "Interstellar",
+    period: "Space Age",
+    thesis: "Build beyond the horizon.",
+    detail: "Colonies, elevators, starships, and living planetary systems keep humanity growing without end.",
+  },
 ];
 
 export const civilizations = [

@@ -6266,3 +6266,334 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.12);
   }
 }
+
+/* Survival-to-space progression section */
+#eras {
+  width: min(1740px, calc(100vw - 36px));
+}
+
+#eras > .progression-panel {
+  grid-column: 1 / -1;
+}
+
+.progression-panel {
+  position: relative;
+  height: clamp(660px, 54vw, 820px);
+  overflow: hidden;
+  border: 1px solid rgba(241, 246, 240, 0.13);
+  background:
+    linear-gradient(90deg, rgba(2, 4, 8, 0.92), rgba(2, 4, 8, 0.2) 36%, rgba(2, 4, 8, 0.72) 100%),
+    #03070d;
+}
+
+.progression-panel::before,
+.progression-panel::after {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  content: "";
+  pointer-events: none;
+}
+
+.progression-panel::before {
+  background:
+    linear-gradient(90deg, rgba(2, 4, 8, 0.96), rgba(2, 4, 8, 0.36) 22%, transparent 52%, rgba(2, 4, 8, 0.62) 100%),
+    linear-gradient(180deg, rgba(2, 4, 8, 0.12), rgba(2, 4, 8, 0.2) 54%, rgba(2, 4, 8, 0.92));
+}
+
+.progression-panel::after {
+  background:
+    linear-gradient(90deg, transparent calc(20% - 1px), rgba(241, 246, 240, 0.08) 20%, transparent calc(20% + 1px)),
+    linear-gradient(90deg, transparent calc(40% - 1px), rgba(241, 246, 240, 0.06) 40%, transparent calc(40% + 1px)),
+    linear-gradient(90deg, transparent calc(60% - 1px), rgba(241, 246, 240, 0.06) 60%, transparent calc(60% + 1px)),
+    linear-gradient(90deg, transparent calc(80% - 1px), rgba(241, 246, 240, 0.08) 80%, transparent calc(80% + 1px)),
+    radial-gradient(circle at 70% 24%, rgba(143, 205, 228, 0.14), transparent 24rem);
+  opacity: 0.72;
+}
+
+.progression-art {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.progression-art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  filter: saturate(0.96) contrast(1.04);
+}
+
+.progression-copy {
+  position: relative;
+  z-index: 4;
+  display: grid;
+  width: min(520px, 42vw);
+  min-height: clamp(400px, 38vw, 580px);
+  align-content: end;
+  gap: 20px;
+  padding: clamp(36px, 5vw, 72px);
+  padding-bottom: clamp(210px, 15vw, 250px);
+}
+
+.progression-copy h2 {
+  max-width: 9ch;
+  margin: 0;
+  color: var(--bone);
+  font-family: "Arial Narrow", "Roboto Condensed", "SF Pro Display", var(--font-sans);
+  font-size: clamp(3.1rem, 6.2vw, 7.4rem);
+  font-stretch: condensed;
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 0.86;
+  text-transform: uppercase;
+}
+
+.progression-copy > p {
+  max-width: 34rem;
+  margin: 0;
+  color: rgba(241, 246, 240, 0.7);
+  font-size: clamp(1rem, 1.4vw, 1.18rem);
+  line-height: 1.58;
+}
+
+.progression-readout {
+  position: absolute;
+  top: clamp(36px, 4vw, 70px);
+  right: clamp(28px, 4vw, 70px);
+  z-index: 5;
+  display: grid;
+  width: min(100%, 430px);
+  min-height: 166px;
+  align-content: start;
+  gap: 10px;
+  border: 1px solid rgba(241, 246, 240, 0.14);
+  background:
+    linear-gradient(135deg, rgba(240, 164, 91, 0.08), transparent 42%),
+    rgba(2, 4, 8, 0.58);
+  padding: 22px;
+  backdrop-filter: blur(18px);
+}
+
+.progression-readout span {
+  color: var(--signal);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.progression-readout strong {
+  color: var(--bone);
+  font-size: clamp(1.7rem, 2.2vw, 2.55rem);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.progression-readout p {
+  max-width: 34rem;
+  margin: 0;
+  color: rgba(241, 246, 240, 0.62);
+  line-height: 1.55;
+}
+
+.progression-rail {
+  position: absolute;
+  right: clamp(20px, 3vw, 54px);
+  bottom: clamp(20px, 3vw, 52px);
+  left: clamp(20px, 3vw, 54px);
+  z-index: 5;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  border: 1px solid rgba(241, 246, 240, 0.12);
+  background: rgba(2, 4, 8, 0.52);
+  backdrop-filter: blur(18px);
+}
+
+.progression-rail button {
+  display: grid;
+  min-height: 132px;
+  align-content: end;
+  justify-items: start;
+  gap: 10px;
+  border: 0;
+  border-right: 1px solid rgba(241, 246, 240, 0.12);
+  background:
+    radial-gradient(circle at 76% 22%, rgba(240, 164, 91, 0.12), transparent 5.8rem),
+    rgba(4, 7, 12, 0.64);
+  padding: 20px;
+  color: var(--bone);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease;
+}
+
+.progression-rail button:last-child {
+  border-right: 0;
+}
+
+.progression-rail small,
+.progression-rail span {
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.progression-rail small {
+  color: var(--signal);
+}
+
+.progression-rail strong {
+  font-size: clamp(1.2rem, 1.9vw, 2.2rem);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 0.94;
+  text-transform: uppercase;
+}
+
+.progression-rail span {
+  max-width: 22ch;
+  color: rgba(241, 246, 240, 0.52);
+  line-height: 1.4;
+}
+
+.progression-rail button:hover,
+.progression-rail button:focus-visible,
+.progression-rail button.is-active {
+  background: var(--signal);
+  color: #050505;
+  outline: none;
+}
+
+.progression-rail button:hover small,
+.progression-rail button:hover span,
+.progression-rail button:focus-visible small,
+.progression-rail button:focus-visible span,
+.progression-rail button.is-active small,
+.progression-rail button.is-active span {
+  color: rgba(5, 5, 5, 0.72);
+}
+
+@media (max-width: 1180px) {
+  .progression-panel {
+    height: 760px;
+  }
+
+  .progression-copy {
+    width: min(620px, 78vw);
+    min-height: 470px;
+  }
+
+  .progression-rail {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .progression-rail button:nth-child(3n) {
+    border-right: 0;
+  }
+
+  .progression-rail button:nth-child(n + 4) {
+    border-top: 1px solid rgba(241, 246, 240, 0.12);
+  }
+}
+
+@media (max-width: 700px) {
+  #eras {
+    width: min(100vw - 24px, 430px);
+  }
+
+  .progression-panel {
+    height: auto;
+    min-height: auto;
+  }
+
+  .progression-panel::before {
+    background:
+      linear-gradient(180deg, rgba(2, 4, 8, 0.18), rgba(2, 4, 8, 0.68) 44%, rgba(2, 4, 8, 0.98) 72%),
+      radial-gradient(circle at 50% 24%, transparent 0 9rem, rgba(2, 4, 8, 0.36) 17rem);
+  }
+
+  .progression-art {
+    position: relative;
+    min-height: 270px;
+  }
+
+  .progression-art img {
+    object-position: 54% center;
+  }
+
+  .progression-copy {
+    width: 100%;
+    min-height: auto;
+    justify-items: center;
+    gap: 16px;
+    padding: 30px 22px 26px;
+    text-align: center;
+  }
+
+  .progression-readout {
+    position: relative;
+    top: auto;
+    right: auto;
+    z-index: 4;
+    width: auto;
+    margin: 0 16px 16px;
+  }
+
+  .progression-copy h2 {
+    max-width: 9ch;
+    margin-inline: auto;
+    font-size: clamp(2.75rem, 12.5vw, 3.85rem);
+    text-align: center;
+  }
+
+  .progression-copy > p,
+  .progression-readout p {
+    text-align: center;
+  }
+
+  .progression-readout {
+    min-height: 184px;
+    justify-items: center;
+  }
+
+  .progression-rail {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 0 16px 16px;
+  }
+
+  .progression-rail button,
+  .progression-rail button:nth-child(3n) {
+    min-height: 96px;
+    border-right: 1px solid rgba(241, 246, 240, 0.12);
+    border-top: 1px solid rgba(241, 246, 240, 0.12);
+    justify-items: center;
+    padding: 16px 12px;
+    text-align: center;
+  }
+
+  .progression-rail button:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .progression-rail button:first-child,
+  .progression-rail button:nth-child(2) {
+    border-top: 0;
+  }
+
+  .progression-rail span {
+    max-width: 28ch;
+  }
+}

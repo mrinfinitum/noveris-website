@@ -6416,8 +6416,11 @@ body {
 
 .progression-rail button {
   display: grid;
+  grid-template-rows: auto auto 1fr;
+  min-width: 0;
   min-height: 132px;
-  align-content: end;
+  align-content: start;
+  align-items: start;
   justify-items: start;
   gap: 10px;
   border: 0;
@@ -6452,7 +6455,9 @@ body {
 }
 
 .progression-rail strong {
-  font-size: clamp(1.2rem, 1.9vw, 2.2rem);
+  max-width: 100%;
+  min-width: 0;
+  font-size: clamp(1.15rem, 1.55vw, 1.95rem);
   font-weight: 900;
   letter-spacing: 0;
   line-height: 0.94;

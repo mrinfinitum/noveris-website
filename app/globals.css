@@ -6111,7 +6111,10 @@ body {
 
 .pitch-era-detail {
   display: grid;
+  grid-template-rows: auto minmax(68px, auto) auto minmax(92px, auto);
   gap: 12px;
+  min-height: 252px;
+  align-content: start;
   margin-top: 34px;
   padding-top: 28px;
   border-top: 1px solid rgba(255, 255, 255, 0.12);

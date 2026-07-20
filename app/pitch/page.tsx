@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PitchEraShowcase } from "./pitch-era-showcase";
 import { PitchLoopShowcase } from "./pitch-loop-showcase";
 
 const proofPoints = [
@@ -119,6 +120,8 @@ export default function PitchPage() {
           ))}
         </div>
       </section>
+
+      <PitchEraShowcase />
 
       <PitchLoopShowcase />
 

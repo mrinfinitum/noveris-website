@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PitchDataSection } from "./pitch-data-section";
 import { PitchEraShowcase } from "./pitch-era-showcase";
 import { PitchLoopShowcase } from "./pitch-loop-showcase";
 import { PitchScrollPlanet } from "./pitch-scroll-planet";
@@ -126,6 +127,8 @@ export default function PitchPage() {
       <PitchEraShowcase />
 
       <PitchLoopShowcase />
+
+      <PitchDataSection />
 
       <section className="pitch-section" aria-labelledby="pitch-civs">
         <div className="pitch-section-heading">

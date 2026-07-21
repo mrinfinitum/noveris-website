@@ -42,11 +42,7 @@ export function PitchScrollPlanet() {
 
   return (
     <div className="pitch-scroll-planet" aria-hidden="true">
-      <div className="pitch-scroll-planet-core">
-        <span />
-        <span />
-        <span />
-      </div>
+      <img src="/media/pitch/exotic-scroll-planet.png" alt="" decoding="async" />
     </div>
   );
 }

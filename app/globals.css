@@ -5667,7 +5667,131 @@ body {
     linear-gradient(180deg, rgba(1, 2, 4, 0.35), rgba(1, 2, 4, 0.92));
 }
 
+.pitch-scroll-planet {
+  --pitch-planet-rotate: 0deg;
+  --pitch-planet-drift: 0px;
+  position: absolute;
+  top: clamp(96px, 14vh, 160px);
+  right: clamp(18px, 5.5vw, 118px);
+  z-index: 0;
+  width: clamp(340px, 37vw, 720px);
+  aspect-ratio: 1;
+  opacity: 0.82;
+  pointer-events: none;
+  transform:
+    translate3d(0, var(--pitch-planet-drift), 0)
+    rotate(var(--pitch-planet-rotate));
+  transform-origin: 50% 50%;
+  transition: opacity 180ms ease;
+}
+
+.pitch-scroll-planet::before,
+.pitch-scroll-planet::after {
+  position: absolute;
+  inset: 50%;
+  content: "";
+  pointer-events: none;
+  transform: translate(-50%, -50%) rotate(-17deg);
+}
+
+.pitch-scroll-planet::before {
+  width: 132%;
+  height: 24%;
+  border: 1px solid rgba(207, 238, 255, 0.18);
+  border-right-color: rgba(255, 159, 10, 0.28);
+  border-left-color: rgba(105, 224, 255, 0.1);
+  border-radius: 50%;
+  filter: blur(0.2px);
+  opacity: 0.78;
+}
+
+.pitch-scroll-planet::after {
+  width: 154%;
+  height: 34%;
+  border-top: 1px solid rgba(255, 159, 10, 0.2);
+  border-bottom: 1px solid rgba(105, 224, 255, 0.1);
+  border-radius: 50%;
+  opacity: 0.42;
+}
+
+.pitch-scroll-planet-core {
+  position: absolute;
+  inset: 7%;
+  overflow: hidden;
+  border: 1px solid rgba(241, 246, 240, 0.12);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 28% 24%, rgba(255, 255, 255, 0.22), transparent 9%),
+    radial-gradient(circle at 35% 30%, rgba(105, 224, 255, 0.28), transparent 18%),
+    radial-gradient(circle at 68% 68%, rgba(255, 159, 10, 0.2), transparent 22%),
+    conic-gradient(from 22deg, rgba(38, 109, 126, 0.34), rgba(255, 159, 10, 0.2), rgba(66, 52, 112, 0.3), rgba(9, 34, 51, 0.72), rgba(38, 109, 126, 0.34)),
+    radial-gradient(circle at 50% 52%, rgba(23, 68, 92, 0.76), rgba(2, 4, 8, 0.92) 72%);
+  box-shadow:
+    inset -42px -34px 90px rgba(0, 0, 0, 0.88),
+    inset 28px 14px 80px rgba(105, 224, 255, 0.1),
+    0 0 90px rgba(105, 224, 255, 0.1),
+    0 0 180px rgba(255, 159, 10, 0.08);
+  mix-blend-mode: screen;
+}
+
+.pitch-scroll-planet-core::before,
+.pitch-scroll-planet-core::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+}
+
+.pitch-scroll-planet-core::before {
+  background:
+    linear-gradient(104deg, transparent 0 18%, rgba(241, 246, 240, 0.12) 19%, transparent 20% 42%, rgba(105, 224, 255, 0.16) 43%, transparent 45%),
+    repeating-linear-gradient(162deg, transparent 0 18px, rgba(241, 246, 240, 0.05) 19px 21px, transparent 22px 42px);
+  opacity: 0.5;
+  mask-image: radial-gradient(circle at 50% 50%, black 42%, transparent 78%);
+}
+
+.pitch-scroll-planet-core::after {
+  background:
+    radial-gradient(ellipse at 34% 50%, rgba(2, 4, 8, 0.02), rgba(2, 4, 8, 0.9) 72%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.12), transparent 18%, rgba(0, 0, 0, 0.72) 72%);
+}
+
+.pitch-scroll-planet-core span {
+  position: absolute;
+  display: block;
+  border-radius: 999px;
+  background: rgba(255, 159, 10, 0.2);
+  filter: blur(10px);
+}
+
+.pitch-scroll-planet-core span:nth-child(1) {
+  top: 24%;
+  left: 18%;
+  width: 46%;
+  height: 12%;
+  transform: rotate(-16deg);
+}
+
+.pitch-scroll-planet-core span:nth-child(2) {
+  right: 15%;
+  bottom: 28%;
+  width: 42%;
+  height: 10%;
+  background: rgba(105, 224, 255, 0.18);
+  transform: rotate(22deg);
+}
+
+.pitch-scroll-planet-core span:nth-child(3) {
+  top: 56%;
+  left: 26%;
+  width: 58%;
+  height: 9%;
+  background: rgba(187, 139, 255, 0.13);
+  transform: rotate(8deg);
+}
+
 .pitch-hero-copy {
+  position: relative;
+  z-index: 1;
   width: min(760px, 100%);
 }
 
@@ -5703,6 +5827,7 @@ body {
 
 .pitch-hero-card {
   position: absolute;
+  z-index: 2;
   right: clamp(24px, 6vw, 116px);
   bottom: clamp(42px, 8vh, 100px);
   width: min(320px, calc(100vw - 48px));
@@ -6322,6 +6447,13 @@ body {
     background:
       radial-gradient(circle at 50% 28%, rgba(104, 227, 255, 0.16), transparent 24rem),
       linear-gradient(180deg, rgba(1, 2, 4, 0.42), rgba(1, 2, 4, 0.92) 58%, rgba(1, 2, 4, 0.98));
+  }
+
+  .pitch-scroll-planet {
+    top: 112px;
+    right: -24vw;
+    width: min(86vw, 430px);
+    opacity: 0.42;
   }
 
   .pitch-hero h1 {

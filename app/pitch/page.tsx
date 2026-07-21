@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PitchEraShowcase } from "./pitch-era-showcase";
 import { PitchLoopShowcase } from "./pitch-loop-showcase";
+import { PitchScrollPlanet } from "./pitch-scroll-planet";
 
 const proofPoints = [
   {
@@ -85,6 +86,7 @@ export default function PitchPage() {
           aria-hidden="true"
           className="pitch-hero-bg"
         />
+        <PitchScrollPlanet />
         <div className="pitch-hero-copy">
           <p className="pitch-kicker">Game concept pitch</p>
           <h1 id="pitch-title">Build civilizations across an infinite living universe.</h1>

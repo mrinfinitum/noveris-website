@@ -58,7 +58,7 @@ export function PitchDataSection() {
     <section className="pitch-data" aria-labelledby="pitch-data-title">
       <div className="pitch-data-copy">
         <p className="pitch-kicker">Driven by data</p>
-        <h2 id="pitch-data-title">A universe built from systems, not scenery.</h2>
+        <h2 id="pitch-data-title">A living universe, rendered in detail and driven by data.</h2>
         <p>
           Planets, labor, trade lanes, resources, agents, events, and civilization
           choices all feed the same simulation layer. The art sells the fantasy;

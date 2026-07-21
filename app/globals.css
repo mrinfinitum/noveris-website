@@ -6775,6 +6775,7 @@ body {
 
   .pitch-era-detail {
     grid-template-columns: 72px minmax(0, 1fr);
+    height: 230px;
     min-height: 230px;
     text-align: left;
   }
@@ -6998,7 +6999,8 @@ body {
 
   .pitch-era-detail {
     grid-template-columns: 66px minmax(0, 1fr);
-    min-height: 218px;
+    height: clamp(224px, calc(478px - 65vw), 270px);
+    min-height: clamp(224px, calc(478px - 65vw), 270px);
     margin-top: 28px;
     padding-top: 24px;
   }

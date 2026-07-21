@@ -48,12 +48,38 @@ const eraPlayerBenefits = [
 
 export function PitchEraShowcase() {
   const [activeEra, setActiveEra] = useState(progressionEras[0]);
+  const activeIndex = progressionEras.findIndex(
+    (era) => era.name === activeEra.name,
+  );
   const activeBenefit =
     eraPlayerBenefits.find((benefit) => benefit.name === activeEra.name) ??
     eraPlayerBenefits[0];
 
   return (
     <section className="pitch-era" aria-labelledby="pitch-era-title">
+      <div className="pitch-era-copy">
+        <p className="pitch-kicker">Civilization continuum</p>
+        <h2 id="pitch-era-title">Eight ages. One civilization that remembers.</h2>
+        <p>
+          Every breakthrough changes the world players already built. Progress
+          feels continuous from the first shelter to a living galactic network.
+        </p>
+        <div className="pitch-era-detail" aria-live="polite">
+          <div className="pitch-era-detail-heading">
+            <span>Selected era</span>
+            <strong>
+              {String(activeIndex + 1).padStart(2, "0")}
+              <small>/08</small>
+            </strong>
+          </div>
+          <div className="pitch-era-detail-copy">
+            <p className="pitch-era-detail-name">{activeEra.name}</p>
+            <p>{activeBenefit.loop}</p>
+            <span>Player value</span>
+            <p>{activeBenefit.benefit}</p>
+          </div>
+        </div>
+      </div>
       <div className="pitch-era-art">
         <img
           src="/media/progression/survival-to-space.png"
@@ -62,44 +88,34 @@ export function PitchEraShowcase() {
           loading="lazy"
           decoding="async"
         />
+        <div className="pitch-era-art-hud" aria-hidden="true">
+          <span>Persistent world state</span>
+          <span>Era {String(activeIndex + 1).padStart(2, "0")}</span>
+        </div>
         <div className="pitch-era-art-label">
           <span>{activeEra.period}</span>
           <strong>{activeEra.name}</strong>
         </div>
       </div>
-      <div className="pitch-era-copy">
-        <p className="pitch-kicker">Player progression</p>
-        <h2 id="pitch-era-title">From first fire to galactic scale.</h2>
-        <p>
-          Each era introduces a familiar fantasy, a new layer of systems, and a
-          fresh reason to return. The game starts readable, then keeps widening.
-        </p>
-        <div className="pitch-era-tabs" role="tablist" aria-label="Playable eras">
-          {progressionEras.map((era, index) => (
-            <button
-              type="button"
-              className={activeEra.name === era.name ? "is-active" : ""}
-              key={era.name}
-              role="tab"
-              aria-selected={activeEra.name === era.name}
-              onClick={() => setActiveEra(era)}
-              onMouseEnter={() => {
-                if (activeEra.name !== era.name) {
-                  setActiveEra(era);
-                }
-              }}
-            >
-              <small>{String(index + 1).padStart(2, "0")}</small>
-              {era.name}
-            </button>
-          ))}
-        </div>
-        <div className="pitch-era-detail" aria-live="polite">
-          <span>What players do</span>
-          <p>{activeBenefit.loop}</p>
-          <span>Why it matters</span>
-          <p>{activeBenefit.benefit}</p>
-        </div>
+      <div className="pitch-era-tabs" role="tablist" aria-label="Playable eras">
+        {progressionEras.map((era, index) => (
+          <button
+            type="button"
+            className={activeEra.name === era.name ? "is-active" : ""}
+            key={era.name}
+            role="tab"
+            aria-selected={activeEra.name === era.name}
+            onClick={() => setActiveEra(era)}
+            onMouseEnter={() => {
+              if (activeEra.name !== era.name) {
+                setActiveEra(era);
+              }
+            }}
+          >
+            <small>{String(index + 1).padStart(2, "0")}</small>
+            <span>{era.name}</span>
+          </button>
+        ))}
       </div>
     </section>
   );
